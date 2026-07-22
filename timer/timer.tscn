@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://u6krxpnho2mc"]
+
+[ext_resource type="Script" uid="uid://sjm1cy7xjb15" path="res://timer/timer.gd" id="1_qmwag"]
+
+[node name="Timer" type="Node2D" unique_id=552243422]
+script = ExtResource("1_qmwag")

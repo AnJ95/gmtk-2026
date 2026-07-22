@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://coc74rqeklnof"]
+
+[ext_resource type="Script" uid="uid://pfd6hqoqscr0" path="res://shelf/shelf.gd" id="1_8nyfk"]
+
+[node name="Shelf" type="Node2D" unique_id=1827128195]
+script = ExtResource("1_8nyfk")

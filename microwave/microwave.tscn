@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b508p6bfv5gds"]
+
+[ext_resource type="Script" uid="uid://hka3vmkhg534" path="res://microwave/microwave.gd" id="1_je6bm"]
+
+[node name="Microwave" type="Node2D" unique_id=379186637]
+script = ExtResource("1_je6bm")

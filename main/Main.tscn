@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://creea13bpnotj"]
 
+[ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
+[ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="4_c651c"]
+
 [node name="Main" type="Node2D" unique_id=1186793701]
+
+[node name="Microwave" parent="." unique_id=379186637 instance=ExtResource("1_pjrb6")]
+
+[node name="Shelf" parent="." unique_id=1827128195 instance=ExtResource("2_xwkvk")]
+
+[node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
+
+[node name="Item" parent="." unique_id=1260310773 instance=ExtResource("4_c651c")]
