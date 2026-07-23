@@ -8,7 +8,7 @@ size = Vector2(128, 128)
 
 [sub_resource type="Gradient" id="Gradient_6t40p"]
 offsets = PackedFloat32Array(0.7409639, 0.8192771)
-colors = PackedColorArray(0.21568628, 0.21568628, 0.21568628, 0.6862745, 0, 0, 0, 0)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_erfwr"]
 gradient = SubResource("Gradient_6t40p")
@@ -34,6 +34,24 @@ gravity = Vector3(0, -240, 0)
 scale_curve = SubResource("CurveTexture_x625f")
 turbulence_enabled = true
 
+[sub_resource type="Curve" id="Curve_6t40p"]
+_data = [Vector2(0, 0.52808994), 0.0, 0.0, 0, 0, Vector2(0.9932432, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jrfc1"]
+curve = SubResource("Curve_6t40p")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_erfwr"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 80.0
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 220.43
+gravity = Vector3(0, 180, 0)
+scale_curve = SubResource("CurveTexture_jrfc1")
+hue_variation_min = -0.100000024
+hue_variation_max = 0.09999997
+
 [node name="Item" type="Node2D" unique_id=1950998414]
 script = ExtResource("1_4ojsc")
 
@@ -54,3 +72,12 @@ emitting = false
 amount = 64
 texture = SubResource("GradientTexture2D_erfwr")
 process_material = SubResource("ParticleProcessMaterial_4mnyk")
+
+[node name="explosion" type="GPUParticles2D" parent="." unique_id=2133715093]
+position = Vector2(0, -64)
+emitting = false
+amount = 16
+texture = SubResource("GradientTexture2D_erfwr")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_erfwr")

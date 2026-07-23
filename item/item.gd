@@ -35,6 +35,7 @@ const RADIUS_OKAY := 3
 
 func _ready() -> void:
 	_set_sprite_texture(raw)
+	$explosion.texture.gradient.set_color(0, particle_color)
 
 
 func _set_sprite_texture(texture: Texture2D) -> void:
@@ -71,7 +72,9 @@ func _process(delta: float) -> void:
 	if state == States.RAW and time > target - RADIUS_OKAY:
 		state = States.DONE
 		sprite.texture = done
+		$explosion.emitting = true
 	elif state == States.DONE and time > target + RADIUS_OKAY:
 		state = States.BURNT
 		sprite.texture = burnt
+		$explosion.emitting = true
 		$smoke.emitting = true
