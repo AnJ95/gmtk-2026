@@ -1,8 +1,9 @@
 extends Sprite2D
 
+@export var item_name: String = ""
+
 @export_group("Time")
-@export var goal: int = 30
-@export var max: int = 40
+@export var target: int = 30
 
 @export_group("Sprites")
 @export var raw: Texture2D
@@ -10,7 +11,7 @@ extends Sprite2D
 @export var burnt: Texture2D
 @export var particle_color: Color
 
-var time: int = 0
+var time: float = 0.
 var in_microwave: bool = false
 
 enum states {
@@ -20,7 +21,8 @@ enum states {
 	}
 var state = states.RAW
 
-const THRESHOLD = 1
+const RADIUS_PERFECT = 1
+const RADIUS_OKAY = 3
 
 func _ready() -> void:
 	self.texture = raw
@@ -31,18 +33,20 @@ func enter_microwave():
 func leave_microwave():
 	self.in_microwave = false
 
-func go_kaputt():
-	queue_free()
+func score() -> int:
+	if time > target - RADIUS_PERFECT and time < target + RADIUS_PERFECT:
+		return 2
+	elif time > target - RADIUS_OKAY and time < target + RADIUS_OKAY:
+		return 1
+	return 0
 
 func _process(delta: float) -> void:
 	if in_microwave:
 		time += delta
 
-	if state == states.RAW and time > goal - THRESHOLD:
+	if state == states.RAW and time > target - RADIUS_OKAY:
 		state = states.DONE
 		self.texture = done
-	elif state == states.DONE and time > goal + THRESHOLD:
+	elif state == states.DONE and time > target + RADIUS_OKAY:
 		state = states.BURNT
 		self.texture = burnt
-	elif state == states.BURNT and time > max:
-		go_kaputt()
