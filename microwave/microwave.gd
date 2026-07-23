@@ -8,7 +8,7 @@ const Slot = preload("res://microwave/slot/microwave_slot.tscn")
 @onready var inner_root = $AnimationRoot/InnerRoot
 
 @export var slot_num := 3
-@export var slot_radius := Vector2(235, 80)
+@export var slot_radius := Vector2(220, 75)
 @export var slot_rotation_speed = TAU / 8.0
 
 var current_runtime = 0

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hp5bb5pnux7h"]
 
+[ext_resource type="Texture2D" uid="uid://v53bg1cy7glt" path="res://main/assets/background.png" id="1_0h8po"]
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
@@ -13,8 +14,12 @@ shader = ExtResource("5_tv7ag")
 
 [node name="Main" type="Node2D" unique_id=1186793701]
 
+[node name="Background" type="Sprite2D" parent="." unique_id=929398161]
+position = Vector2(960, 540)
+texture = ExtResource("1_0h8po")
+
 [node name="Microwave" parent="." unique_id=379186637 instance=ExtResource("1_pjrb6")]
-position = Vector2(912, 542)
+position = Vector2(750, 542)
 
 [node name="Shelf" parent="." unique_id=1827128195 instance=ExtResource("2_xwkvk")]
 position = Vector2(185, 962)

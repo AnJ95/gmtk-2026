@@ -135,14 +135,13 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
-size = Vector2(1072, 572)
+size = Vector2(920, 549)
 
 [node name="Microwave" type="Node2D" unique_id=379186637]
 script = ExtResource("1_je6bm")
 
 [node name="AnimationPlayerDoor" type="AnimationPlayer" parent="." unique_id=1500721819]
 libraries/ = SubResource("AnimationLibrary_7tji0")
-autoplay = &"open"
 
 [node name="AnimationRoot" type="Node2D" parent="." unique_id=517830952]
 
@@ -151,7 +150,7 @@ texture = ExtResource("2_041lo")
 
 [node name="InnerRoot" type="Node2D" parent="AnimationRoot" unique_id=1084913422]
 y_sort_enabled = true
-position = Vector2(-118, -81)
+position = Vector2(-89, -64)
 
 [node name="MicrowaveDoorClosed" type="Sprite2D" parent="AnimationRoot" unique_id=731310117]
 texture = ExtResource("3_phhhb")
@@ -168,6 +167,7 @@ texture = ExtResource("5_phvat")
 position = Vector2(-103, -175)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHoverArea2D" unique_id=727686717]
+position = Vector2(28, 19.5)
 shape = SubResource("RectangleShape2D_6mv5x")
 metadata/_edit_lock_ = true
 

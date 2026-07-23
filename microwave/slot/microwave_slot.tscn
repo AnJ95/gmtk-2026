@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckair3wdkc88u" path="res://drag-and-drop/Droppable.tscn" id="3_sj3u3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
-size = Vector2(486, 180)
+size = Vector2(309, 122)
 
 [node name="MicrowaveSlot" type="Node2D" unique_id=1241206432]
 script = ExtResource("1_dr7dp")
@@ -20,4 +20,5 @@ accepted_draggable_identifiers = Array[String](["item"])
 max_draggables = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Droppable" unique_id=881158473]
+position = Vector2(0.5, -19)
 shape = SubResource("RectangleShape2D_6mv5x")
