@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RenameMeTheGame"
-run/main_scene="uid://creea13bpnotj"
+run/main_scene="uid://hp5bb5pnux7h"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
