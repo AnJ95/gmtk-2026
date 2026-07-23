@@ -8,8 +8,8 @@ const Slot = preload("res://microwave/slot/microwave_slot.tscn")
 @onready var inner_root = $AnimationRoot/InnerRoot
 
 @export var slot_num := 3
-@export var slot_radius := Vector2(220, 75)
-@export var slot_rotation_speed = TAU / 10.0
+@export var slot_radius := Vector2(235, 80)
+@export var slot_rotation_speed = TAU / 8.0
 
 var current_runtime = 0
 var is_open = false
@@ -40,7 +40,6 @@ func _on_level_manager_level_start(level: Level) -> void:
 	spawn_slots()
 
 func set_open_state(new_open_state: bool):
-	is_running = !new_open_state
 	if is_open != new_open_state:
 		is_open = new_open_state
 		$AnimationPlayerDoor.play("open" if new_open_state else "close")
