@@ -148,7 +148,7 @@ texture = ExtResource("2_041lo")
 
 [node name="InnerRoot" type="Node2D" parent="AnimationRoot" unique_id=1084913422]
 y_sort_enabled = true
-position = Vector2(-98, -81)
+position = Vector2(-118, -81)
 
 [node name="MicrowaveDoorClosed" type="Sprite2D" parent="AnimationRoot" unique_id=731310117]
 texture = ExtResource("3_phhhb")

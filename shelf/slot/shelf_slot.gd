@@ -1,10 +1,11 @@
 extends Node2D
 
-const ItemScene = preload("res://item/item.tscn")
+var item_scene: PackedScene
 var current_item: Node2D
 
 
 func _ready() -> void:
-	current_item = ItemScene.instantiate() as Node2D
+	assert(item_scene != null, "ShelfSlot needs item_scene")
+	current_item = item_scene.instantiate() as Node2D
 	add_child(current_item)
 	current_item.get_node("Draggable").drag_drop($Droppable)
