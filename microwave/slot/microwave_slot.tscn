@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://y6xoh0o101nd"]
 
 [ext_resource type="Script" uid="uid://c8dfdhnqe4sva" path="res://microwave/slot/microwave_slot.gd" id="1_dr7dp"]
-[ext_resource type="Texture2D" uid="uid://dmbijnnjk2i2u" path="res://icon.svg" id="2_wbq8w"]
+[ext_resource type="Texture2D" uid="uid://dgoxele805hg3" path="res://microwave/slot/assets/plate.png" id="2_dr7dp"]
 [ext_resource type="PackedScene" uid="uid://ckair3wdkc88u" path="res://drag-and-drop/Droppable.tscn" id="3_sj3u3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
-size = Vector2(220, 206)
+size = Vector2(486, 180)
 
 [node name="MicrowaveSlot" type="Node2D" unique_id=1241206432]
 script = ExtResource("1_dr7dp")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=384205804]
-modulate = Color(0, 0, 0, 1)
 scale = Vector2(1.71875, 1.6093749)
-texture = ExtResource("2_wbq8w")
+texture = ExtResource("2_dr7dp")
 
 [node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root") instance=ExtResource("3_sj3u3")]
 root = NodePath("..")
