@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c46yx6w6qiej"]
 
 [ext_resource type="Script" uid="uid://b36ub57lf3nu3" path="res://item/item.gd" id="1_4ojsc"]
-[ext_resource type="Texture2D" uid="uid://dmbijnnjk2i2u" path="res://icon.svg" id="2_0yflk"]
 [ext_resource type="PackedScene" uid="uid://cbjbfx5dduewb" path="res://drag-and-drop/Draggable.tscn" id="2_6t40p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbq2"]
@@ -10,13 +9,9 @@ size = Vector2(128, 128)
 [node name="Item" type="Sprite2D" unique_id=1400601987]
 script = ExtResource("1_4ojsc")
 
-[node name="DeleteMe" type="Sprite2D" parent="." unique_id=142125017]
-texture = ExtResource("2_0yflk")
-
 [node name="Draggable" parent="." unique_id=1495946638 node_paths=PackedStringArray("root") instance=ExtResource("2_6t40p")]
 root = NodePath("..")
 draggable_identifier = "item"
-animate_on_drop_reject = true
 animate_on_drop_accept = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable" unique_id=342224994]

@@ -4,7 +4,7 @@ static func get_area_rect(area: Area2D) -> Rect2:
 	var shape_node := area.get_node("CollisionShape2D") as CollisionShape2D
 	var shape := shape_node.shape as RectangleShape2D
 	var extents := shape.size * 0.5
-	var center := shape_node.global_position
+	var center := shape_node.position
 	return Rect2(
 		center - extents,
 		shape.size

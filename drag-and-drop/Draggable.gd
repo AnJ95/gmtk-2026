@@ -63,15 +63,9 @@ func drag_drop(droppable: Droppable):
 		animate_drop_accept(droppable)
 
 func animate_drop_accept(droppable: Droppable):
-	var target_pos = get_random_droppable_accept_position(droppable)
+	var target_pos = droppable.get_root_rect().get_center()
 	var tween = get_tree().create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tween.tween_property(root, "global_position", target_pos, 0.2)
-	tween.play()
-	
-func animate_drop_reject(droppable: Droppable):
-	var target_pos = get_random_droppable_reject_position(droppable)
-	var tween = get_tree().create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tween.tween_property(root, "global_position", target_pos, 0.2)
+	tween.tween_property(root, "position", target_pos, 0.2)
 	tween.play()
 	
 func drag_undrop():
@@ -107,13 +101,4 @@ func get_currently_overlapping_droppable() -> Droppable:
 			if not selected_candidate or droppable.get_index() > selected_candidate.get_index():
 				selected_candidate = candidate
 	return selected_candidate
-	
-func get_random_droppable_reject_position(droppable: Droppable) -> Vector2:
-	# TODO try again if outside viewport
-	# TODO try again if now over other Newspaper?
-	return Util.get_random_point_outside(Util.get_area_rect(self), droppable.get_root_rect(false), 10)
-
-func get_random_droppable_accept_position(droppable: Droppable) -> Vector2:
-	return droppable.get_root_rect().get_center()
-	# return Util.move_to_closest_point_inside(Util.get_area_rect(self), droppable.get_root_rect(), 5)
 	

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckair3wdkc88u" path="res://drag-and-drop/Droppable.tscn" id="3_epenv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yflk"]
-size = Vector2(294, 144)
+size = Vector2(294, 112)
 
 [node name="ShelfSlot" type="Node2D" unique_id=1680185440]
 script = ExtResource("1_ylvlw")
@@ -13,11 +13,14 @@ script = ExtResource("1_ylvlw")
 [node name="Plate" type="Sprite2D" parent="." unique_id=1842061043]
 texture = ExtResource("2_ylvlw")
 
-[node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root") instance=ExtResource("3_epenv")]
+[node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root", "custom_draggable_position") instance=ExtResource("3_epenv")]
 root = NodePath("..")
 accepted_draggable_identifiers = Array[String](["item"])
+custom_draggable_position = NodePath("../DraggablePosition")
 max_draggables = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Droppable" unique_id=842727144]
-position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_0yflk")
+
+[node name="DraggablePosition" type="Marker2D" parent="." unique_id=1517569879]
+position = Vector2(0, 20)

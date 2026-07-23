@@ -6,7 +6,7 @@ signal draggable_undropped(draggable: Draggable)
 
 @export var root: Node2D
 @export var accepted_draggable_identifiers: Array[String] = []
-@export var custom_draggable_rect: Control
+@export var custom_draggable_position: Marker2D
 @export var max_draggables: int = INF
 
 var current_draggables: Array[Draggable] = []
@@ -14,8 +14,6 @@ var _enabled := true
 
 func _ready() -> void:
 	assert(accepted_draggable_identifiers.size() > 0, "Droppable must at least have one accepted Draggable identifier")
-	if custom_draggable_rect:
-		custom_draggable_rect.connect("resized", _custom_draggable_rect_changed)
 
 func draggable_drop(draggable: Draggable):
 	current_draggables.append(draggable)
@@ -48,8 +46,8 @@ func get_contents_recursive() -> Array[Draggable]:
 	return out
 
 func get_root_rect(including_custom := true) -> Rect2:
-	if including_custom and custom_draggable_rect:
-		return custom_draggable_rect.get_global_rect()
+	if including_custom and custom_draggable_position:
+		return Rect2(custom_draggable_position.position, Vector2.ZERO)
 	return Util.get_area_rect(self)
 	
 func _custom_draggable_rect_changed():
