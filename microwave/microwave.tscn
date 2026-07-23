@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hka3vmkhg534" path="res://microwave/microwave.gd" id="1_je6bm"]
 [ext_resource type="Texture2D" uid="uid://chdledwhi6ca6" path="res://microwave/assets/microwave_body.png" id="2_041lo"]
+[ext_resource type="PackedScene" uid="uid://y6xoh0o101nd" path="res://microwave/slot/microwave_slot.tscn" id="3_7tji0"]
 [ext_resource type="Texture2D" uid="uid://c63ixegkjtsib" path="res://microwave/assets/microwave_door_closed.png" id="3_phhhb"]
 [ext_resource type="Texture2D" uid="uid://cvu8nfw2wumbp" path="res://microwave/assets/microwave_door_half.png" id="4_7tji0"]
 [ext_resource type="Texture2D" uid="uid://u5svk13mc76l" path="res://microwave/assets/microwave_door_open.png" id="5_phvat"]
@@ -145,6 +146,18 @@ autoplay = &"open"
 
 [node name="MicrowaveBody" type="Sprite2D" parent="AnimationRoot" unique_id=1358710264]
 texture = ExtResource("2_041lo")
+
+[node name="InnerRoot" type="Node2D" parent="AnimationRoot" unique_id=1084913422]
+y_sort_enabled = true
+
+[node name="MicrowaveSlot" parent="AnimationRoot/InnerRoot" unique_id=1241206432 instance=ExtResource("3_7tji0")]
+position = Vector2(-87, 0)
+
+[node name="MicrowaveSlot2" parent="AnimationRoot/InnerRoot" unique_id=252307663 instance=ExtResource("3_7tji0")]
+position = Vector2(-325, -113)
+
+[node name="MicrowaveSlot3" parent="AnimationRoot/InnerRoot" unique_id=306780765 instance=ExtResource("3_7tji0")]
+position = Vector2(145, -138)
 
 [node name="MicrowaveDoorClosed" type="Sprite2D" parent="AnimationRoot" unique_id=731310117]
 texture = ExtResource("3_phhhb")

@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://coc74rqeklnof"]
 
 [ext_resource type="Script" uid="uid://pfd6hqoqscr0" path="res://shelf/shelf.gd" id="1_8nyfk"]
+[ext_resource type="PackedScene" uid="uid://b4u2cix7jst61" path="res://shelf/slot/shelf_slot.tscn" id="2_w38hi"]
 
 [node name="Shelf" type="Node2D" unique_id=1827128195]
 script = ExtResource("1_8nyfk")
+
+[node name="ShelfSlot" parent="." unique_id=1680185440 instance=ExtResource("2_w38hi")]
+
+[node name="ShelfSlot2" parent="." unique_id=821168381 instance=ExtResource("2_w38hi")]
+position = Vector2(340, 0)
+
+[node name="ShelfSlot3" parent="." unique_id=1498299301 instance=ExtResource("2_w38hi")]
+position = Vector2(682, 0)

@@ -146,5 +146,6 @@ func get_random_droppable_reject_position(droppable: Droppable) -> Vector2:
 	return Util.get_random_point_outside(Util.get_area_rect(self), droppable.get_root_rect(false), 10)
 
 func get_random_droppable_accept_position(droppable: Droppable) -> Vector2:
-	return Util.move_to_closest_point_inside(Util.get_area_rect(self), droppable.get_root_rect(), 5)
+	return droppable.get_root_rect().get_center()
+	# return Util.move_to_closest_point_inside(Util.get_area_rect(self), droppable.get_root_rect(), 5)
 	
