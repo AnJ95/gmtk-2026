@@ -65,3 +65,5 @@ func _process(delta: float) -> void:
 func _on_draggable_dropped(droppable: Droppable) -> void:
 	if droppable.root.MICROWAVE:
 		in_microwave = true
+	else:
+		in_microwave = false
