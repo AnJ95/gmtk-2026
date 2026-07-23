@@ -14,8 +14,8 @@ font_size = 42
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_aekwl"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0.8560673, 0.8560673, 0.85606724, 1, 1, 1, 1, 0, 0.95596343, 0.9559633, 0.95596343, 1)
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(0.8560673, 0.8560673, 0.85606724, 1, 1, 1, 1, 0, 0.9926606, 0.9926606, 0.9926606, 0.16666666, 0.9297154, 0.92971444, 0.9297147, 1)
 metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_erfwr"]
@@ -67,7 +67,7 @@ ticks = Array[AudioStream]([ExtResource("4_dbx2n"), ExtResource("4_7otmy"), ExtR
 [node name="Label" type="Label" parent="." unique_id=46145476]
 offset_left = -280.0
 offset_top = -56.0
-offset_right = 282.0
+offset_right = 280.0
 offset_bottom = 45.0
 text = "50 | 55 | 00 | 05 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95 | 00 | 05 | "
 label_settings = SubResource("LabelSettings_4mnyk")
@@ -77,15 +77,15 @@ visible_characters = 22
 visible_ratio = 0.18333334
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1394632276]
-position = Vector2(0, 14)
+position = Vector2(6, 14)
 points = PackedVector2Array(-276, -2, 266, -2)
 default_color = Color(0, 0, 0, 1)
 joint_mode = 2
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=63713998]
-offset_left = -280.0
+offset_left = -278.0
 offset_top = -82.0
-offset_right = 278.0
+offset_right = 280.0
 offset_bottom = 36.0
 texture = SubResource("GradientTexture1D_erfwr")
 
@@ -94,3 +94,8 @@ stream = ExtResource("4_dbx2n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=426282165]
 libraries/ = SubResource("AnimationLibrary_64300")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1771869547]
+position = Vector2(0, 6)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 26, -16, 58, 16, 58)
