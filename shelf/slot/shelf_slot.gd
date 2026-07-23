@@ -1,4 +1,10 @@
 extends Node2D
 
-func _enter_tree() -> void:
-	$Droppable.draggable_root = get_parent()
+const ItemScene = preload("res://item/item.tscn")
+var current_item: Node2D
+
+
+func _ready() -> void:
+	current_item = ItemScene.instantiate() as Node2D
+	add_child(current_item)
+	current_item.get_node("Draggable").drag_drop($Droppable)

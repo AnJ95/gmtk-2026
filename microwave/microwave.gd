@@ -24,7 +24,6 @@ func spawn_slots() -> void:
 	for i in range(slot_num):
 		var instance := Slot.instantiate() as Node2D
 		instance.position = calc_pos_at(i, 0)
-		instance.get_node("Droppable").draggable_root = get_parent()
 		inner_root.add_child(instance)
 
 

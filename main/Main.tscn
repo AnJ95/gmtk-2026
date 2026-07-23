@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
-[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="4_c651c"]
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
 [ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="6_qtrhv"]
@@ -21,10 +20,8 @@ position = Vector2(185, 962)
 
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
 
-[node name="Item" parent="." unique_id=1260310773 instance=ExtResource("4_c651c")]
-position = Vector2(1493, 985)
-
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=1592704776]
+visible = false
 follow_viewport_enabled = true
 
 [node name="color_shader" type="ColorRect" parent="post_processing" unique_id=643316038]
