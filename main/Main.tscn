@@ -19,9 +19,9 @@ position = Vector2(912, 542)
 position = Vector2(185, 962)
 
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
+position = Vector2(1756, 988)
 
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=1592704776]
-visible = false
 follow_viewport_enabled = true
 
 [node name="color_shader" type="ColorRect" parent="post_processing" unique_id=643316038]
