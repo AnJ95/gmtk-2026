@@ -1,6 +1,157 @@
 [gd_scene format=3 uid="uid://b508p6bfv5gds"]
 
 [ext_resource type="Script" uid="uid://hka3vmkhg534" path="res://microwave/microwave.gd" id="1_je6bm"]
+[ext_resource type="Texture2D" uid="uid://chdledwhi6ca6" path="res://microwave/assets/microwave_body.png" id="2_041lo"]
+[ext_resource type="Texture2D" uid="uid://c63ixegkjtsib" path="res://microwave/assets/microwave_door_closed.png" id="3_phhhb"]
+[ext_resource type="Texture2D" uid="uid://cvu8nfw2wumbp" path="res://microwave/assets/microwave_door_half.png" id="4_7tji0"]
+[ext_resource type="Texture2D" uid="uid://u5svk13mc76l" path="res://microwave/assets/microwave_door_open.png" id="5_phvat"]
+
+[sub_resource type="Animation" id="Animation_041lo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationRoot/MicrowaveDoorClosed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationRoot/MicrowaveDoorHalf:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationRoot/MicrowaveDoorOpen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7tji0"]
+resource_name = "close"
+length = 0.19999999999999998
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationRoot/MicrowaveDoorClosed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationRoot/MicrowaveDoorHalf:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationRoot/MicrowaveDoorOpen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_phhhb"]
+resource_name = "open"
+length = 0.19999999999999998
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationRoot/MicrowaveDoorClosed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationRoot/MicrowaveDoorHalf:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationRoot/MicrowaveDoorOpen:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tji0"]
+_data = {
+&"RESET": SubResource("Animation_041lo"),
+&"close": SubResource("Animation_7tji0"),
+&"open": SubResource("Animation_phhhb")
+}
 
 [node name="Microwave" type="Node2D" unique_id=379186637]
 script = ExtResource("1_je6bm")
+
+[node name="AnimationPlayerDoor" type="AnimationPlayer" parent="." unique_id=1500721819]
+libraries/ = SubResource("AnimationLibrary_7tji0")
+
+[node name="AnimationRoot" type="Node2D" parent="." unique_id=517830952]
+
+[node name="MicrowaveBody" type="Sprite2D" parent="AnimationRoot" unique_id=1358710264]
+texture = ExtResource("2_041lo")
+
+[node name="MicrowaveDoorClosed" type="Sprite2D" parent="AnimationRoot" unique_id=731310117]
+texture = ExtResource("3_phhhb")
+
+[node name="MicrowaveDoorHalf" type="Sprite2D" parent="AnimationRoot" unique_id=195721349]
+visible = false
+texture = ExtResource("4_7tji0")
+
+[node name="MicrowaveDoorOpen" type="Sprite2D" parent="AnimationRoot" unique_id=1466194552]
+visible = false
+texture = ExtResource("5_phvat")
