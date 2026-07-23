@@ -14,9 +14,6 @@ const Slot = preload("res://microwave/slot/microwave_slot.tscn")
 var current_runtime = 0
 var is_running = true
 
-func _ready() -> void:
-	spawn_slots()
-
 func spawn_slots() -> void:
 	for child in inner_root.get_children():
 		child.queue_free()
@@ -25,7 +22,6 @@ func spawn_slots() -> void:
 		var instance := Slot.instantiate() as Node2D
 		instance.position = calc_pos_at(i, 0)
 		inner_root.add_child(instance)
-
 
 func calc_pos_at(i: int, time: float):
 	var angle_step := TAU / slot_num
@@ -36,3 +32,8 @@ func _process(delta: float) -> void:
 		current_runtime += delta
 		for i in inner_root.get_child_count():
 			inner_root.get_child(i).position = calc_pos_at(i, current_runtime)
+
+
+func _on_level_manager_level_start(level: Level) -> void:
+	slot_num = level.num_microwave_slots
+	spawn_slots()

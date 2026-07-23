@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://creea13bpnotj"]
+[gd_scene format=3 uid="uid://hp5bb5pnux7h"]
 
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
 [ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="6_qtrhv"]
+[ext_resource type="Script" uid="uid://cj3c245ga5s5i" path="res://level/LevelManager.gd" id="7_o80qs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
 shader = ExtResource("5_tv7ag")
@@ -37,3 +38,8 @@ script = ExtResource("6_o80qs")
 
 [node name="DragManager" type="Node2D" parent="." unique_id=1821741519]
 script = ExtResource("6_qtrhv")
+
+[node name="LevelManager" type="Node" parent="." unique_id=1836398542]
+script = ExtResource("7_o80qs")
+
+[connection signal="level_start" from="LevelManager" to="Microwave" method="_on_level_manager_level_start"]
