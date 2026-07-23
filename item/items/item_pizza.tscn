@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dh3d52fjxu5v8"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_5ati2"]
+[ext_resource type="Texture2D" uid="uid://cpoagp4bpgrtw" path="res://item/items/assets/pizza_raw.png" id="2_5ati2"]
+[ext_resource type="Texture2D" uid="uid://bnqmsnd7a88o2" path="res://item/items/assets/pizza_done.png" id="3_e0xte"]
+[ext_resource type="Texture2D" uid="uid://cxdwnkrbsi82j" path="res://item/items/assets/pizza_burnt.png" id="4_hup40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(294, 171)
+
+[node name="ItemWineBottle" unique_id=1400601987 instance=ExtResource("1_5ati2")]
+item_name = "Pizza"
+raw = ExtResource("2_5ati2")
+done = ExtResource("3_e0xte")
+burnt = ExtResource("4_hup40")
+particle_color = Color(0.49803922, 0.09411765, 0.17254902, 0.8117647)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -50)
+texture = ExtResource("2_5ati2")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -50.5)
+shape = SubResource("RectangleShape2D_22orn")
