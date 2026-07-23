@@ -1,4 +1,5 @@
-extends Sprite2D
+@tool
+extends Node2D
 
 @export var item_name: String = ""
 
@@ -6,47 +7,70 @@ extends Sprite2D
 @export var target: int = 30
 
 @export_group("Sprites")
-@export var raw: Texture2D
+@export var raw: Texture2D:
+	set(value):
+		raw = value
+		_set_sprite_texture(raw)
+
 @export var done: Texture2D
 @export var burnt: Texture2D
 @export var particle_color: Color
 
-var time: float = 0.
+@onready var sprite: Sprite2D = $Sprite2D
+
+var time: float = 0.0
 var in_microwave: bool = false
 
-enum states {
-		RAW,
-		DONE,
-		BURNT,
-	}
-var state = states.RAW
+enum States {
+	RAW,
+	DONE,
+	BURNT,
+}
 
-const RADIUS_PERFECT = 1
-const RADIUS_OKAY = 3
+var state: States = States.RAW
+
+const RADIUS_PERFECT := 1
+const RADIUS_OKAY := 3
+
 
 func _ready() -> void:
-	self.texture = raw
+	_set_sprite_texture(raw)
 
-func enter_microwave():
-	self.in_microwave = true
 
-func leave_microwave():
-	self.in_microwave = false
+func _set_sprite_texture(texture: Texture2D) -> void:
+	var sprite_node := $Sprite2D as Sprite2D
+	if sprite_node:
+		sprite_node.texture = texture
+
+
+func enter_microwave() -> void:
+	in_microwave = true
+
+
+func leave_microwave() -> void:
+	in_microwave = false
+
 
 func score() -> int:
 	if time > target - RADIUS_PERFECT and time < target + RADIUS_PERFECT:
 		return 2
 	elif time > target - RADIUS_OKAY and time < target + RADIUS_OKAY:
 		return 1
+
 	return 0
 
+
 func _process(delta: float) -> void:
+	# Prevent the cooking logic from running inside the editor.
+	if Engine.is_editor_hint():
+		return
+
 	if in_microwave:
 		time += delta
 
-	if state == states.RAW and time > target - RADIUS_OKAY:
-		state = states.DONE
-		self.texture = done
-	elif state == states.DONE and time > target + RADIUS_OKAY:
-		state = states.BURNT
-		self.texture = burnt
+	if state == States.RAW and time > target - RADIUS_OKAY:
+		state = States.DONE
+		sprite.texture = done
+	elif state == States.DONE and time > target + RADIUS_OKAY:
+		state = States.BURNT
+		sprite.texture = burnt

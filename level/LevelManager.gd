@@ -4,7 +4,7 @@ signal level_start(level: Level)
 
 var levels := [
 	Level.new(30, 3, [
-		preload("res://item/item.tscn"),
+		preload("res://item/items/item_wine_bottle.tscn"),
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn")
 	]),

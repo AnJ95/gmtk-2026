@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bk35h754htccn"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_r684h"]
+[ext_resource type="Texture2D" uid="uid://bpbfyjqbeln4m" path="res://item/items/assets/wine_bottle_raw.png" id="2_22orn"]
+[ext_resource type="Texture2D" uid="uid://bxw3fqsfj2d8d" path="res://item/items/assets/wine_bottle_done.png" id="3_q7kl5"]
+[ext_resource type="Texture2D" uid="uid://dyw4phmokm1l7" path="res://item/items/assets/wine_bottle_burned.png" id="4_2qcr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(88, 266)
+
+[node name="ItemWineBottle" unique_id=1400601987 instance=ExtResource("1_r684h")]
+item_name = "Wine"
+raw = ExtResource("2_22orn")
+done = ExtResource("3_q7kl5")
+burnt = ExtResource("4_2qcr5")
+particle_color = Color(0.49803922, 0.09411765, 0.17254902, 0.8117647)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -122)
+texture = ExtResource("2_22orn")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -117)
+shape = SubResource("RectangleShape2D_22orn")

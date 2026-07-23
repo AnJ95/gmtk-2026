@@ -6,8 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbq2"]
 size = Vector2(128, 128)
 
-[node name="Item" type="Sprite2D" unique_id=1400601987]
+[node name="Item" type="Node2D" unique_id=1950998414]
 script = ExtResource("1_4ojsc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=157243693]
 
 [node name="Draggable" parent="." unique_id=1495946638 node_paths=PackedStringArray("root") instance=ExtResource("2_6t40p")]
 root = NodePath("..")
@@ -15,4 +17,5 @@ draggable_identifier = "item"
 animate_on_drop_accept = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Draggable" unique_id=342224994]
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_kfbq2")
