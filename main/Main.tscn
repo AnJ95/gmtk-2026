@@ -18,6 +18,7 @@ position = Vector2(912, 542)
 
 [node name="Shelf" parent="." unique_id=1827128195 instance=ExtResource("2_xwkvk")]
 position = Vector2(185, 962)
+end_position = Vector2(1200, 0)
 
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
 position = Vector2(1756, 988)
@@ -43,3 +44,4 @@ script = ExtResource("6_qtrhv")
 script = ExtResource("7_o80qs")
 
 [connection signal="level_start" from="LevelManager" to="Microwave" method="_on_level_manager_level_start"]
+[connection signal="level_start" from="LevelManager" to="Shelf" method="_on_level_manager_level_start"]

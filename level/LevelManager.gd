@@ -3,7 +3,8 @@ extends Node
 signal level_start(level: Level)
 
 var levels := [
-	Level.new(30, 2, [
+	Level.new(30, 3, [
+		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn")
 	]),
@@ -11,8 +12,10 @@ var levels := [
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
+		preload("res://item/item.tscn")
 	]),
 	Level.new(60, 4, [
+		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
 		preload("res://item/item.tscn"),
