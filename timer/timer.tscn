@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://2sjcpyyb3o0u" path="res://timer/tick1.wav" id="4_dbx2n"]
 [ext_resource type="AudioStream" uid="uid://cd2goo5illi1m" path="res://timer/tick3.wav" id="5_2w1p8"]
 [ext_resource type="AudioStream" uid="uid://b2gpy2urp7goc" path="res://timer/tick4.wav" id="6_64300"]
+[ext_resource type="AudioStream" uid="uid://c2w1cogbp75cb" path="res://timer/ring.wav" id="8_2w1p8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
 font = ExtResource("3_aekwl")
@@ -35,6 +36,46 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_64300"]
+resource_name = "ring"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.13333334, 0.2, 0.26666665, 0.36666667, 0.43333334, 0.55, 0.65000004, 0.7166667, 0.78, 0.88, 0.94666666, 0.98, 1.08, 1.13, 1.1466666, 1.23, 1.2966666, 1.45, 1.5500001, 1.6166667, 1.68, 1.78, 1.8466666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.06981317007977318, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.06981317007977318, 0.0, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.0, 0.06981317007977318, -0.05235987755982989, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.19, 0.29, 0.37, 0.45, 0.53999996, 0.64, 0.74, 0.82, 0.92, 1.01, 1.11, 1.21, 1.29, 1.41, 1.5, 1.5999999, 1.6999999, 1.78),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, -5), Vector2(-6, 7), Vector2(5, -3), Vector2(-10, 8), Vector2(0, 0), Vector2(1, -5), Vector2(-6, 7), Vector2(5, -3), Vector2(-10, 8), Vector2(0, 0), Vector2(1, -5), Vector2(-6, 7), Vector2(5, -3), Vector2(-10, 8), Vector2(0, 0), Vector2(1, -5), Vector2(-6, 7), Vector2(5, -3), Vector2(-10, 8)]
+}
 
 [sub_resource type="Animation" id="Animation_2w1p8"]
 resource_name = "shake"
@@ -55,6 +96,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_64300"]
 _data = {
 &"RESET": SubResource("Animation_7otmy"),
+&"ring": SubResource("Animation_64300"),
 &"shake": SubResource("Animation_2w1p8")
 }
 
@@ -89,9 +131,6 @@ offset_right = 280.0
 offset_bottom = 36.0
 texture = SubResource("GradientTexture1D_erfwr")
 
-[node name="tick" type="AudioStreamPlayer" parent="." unique_id=619820905]
-stream = ExtResource("4_dbx2n")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=426282165]
 libraries/ = SubResource("AnimationLibrary_64300")
 
@@ -99,3 +138,9 @@ libraries/ = SubResource("AnimationLibrary_64300")
 position = Vector2(0, 6)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(0, 26, -16, 58, 16, 58)
+
+[node name="tick" type="AudioStreamPlayer" parent="." unique_id=619820905]
+stream = ExtResource("4_dbx2n")
+
+[node name="ring" type="AudioStreamPlayer" parent="." unique_id=216577455]
+stream = ExtResource("8_2w1p8")

@@ -5,12 +5,14 @@ extends Sprite2D
 
 var time: float = 0
 var tick_counter: int = 0
-var is_counting: bool = true
+var is_counting: bool = false
 
 func set_timer(t: int):
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(self, "time", t , 4)
+	await tween.finished
+	is_counting = true
 
 func tick():
 	$Label.visible_characters = int(self.time) + 22
@@ -25,6 +27,11 @@ func _process(delta: float) -> void:
 
 	if is_counting and time >= 0:
 		time -= delta
+	elif is_counting and time < 0:
+		$ring.play()
+		is_counting = false
+		$AnimationPlayer.play("ring")
+
 
 func _on_level_manager_level_start(level: Level) -> void:
 	set_timer(level.total_time)
