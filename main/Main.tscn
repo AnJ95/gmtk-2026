@@ -8,6 +8,7 @@
 [node name="Main" type="Node2D" unique_id=1186793701]
 
 [node name="Microwave" parent="." unique_id=379186637 instance=ExtResource("1_pjrb6")]
+position = Vector2(912, 542)
 
 [node name="Shelf" parent="." unique_id=1827128195 instance=ExtResource("2_xwkvk")]
 

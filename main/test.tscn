@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://bxor52lrv0g8u"]
+
+[ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_khmyp"]
+[ext_resource type="Texture2D" uid="uid://dmbijnnjk2i2u" path="res://icon.svg" id="5_jyumd"]
+[ext_resource type="PackedScene" uid="uid://ckair3wdkc88u" path="res://drag-and-drop/Droppable.tscn" id="6_tyhf6"]
+[ext_resource type="PackedScene" uid="uid://cbjbfx5dduewb" path="res://drag-and-drop/Draggable.tscn" id="7_gieds"]
+[ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="8_cokb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0i4oc"]
+size = Vector2(154, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
+size = Vector2(128, 128)
+
+[node name="Test" type="Node2D" unique_id=1186793701]
+
+[node name="Microwave" parent="." unique_id=379186637 instance=ExtResource("1_khmyp")]
+position = Vector2(912, 542)
+
+[node name="DroppableTest" type="Sprite2D" parent="." unique_id=624612585]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(804, 382)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_jyumd")
+
+[node name="Droppable" parent="DroppableTest" unique_id=372901968 node_paths=PackedStringArray("root", "draggable_root") instance=ExtResource("6_tyhf6")]
+root = NodePath("..")
+draggable_root = NodePath("../..")
+accepted_draggable_identifiers = Array[String](["item"])
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableTest/Droppable" unique_id=1726939312]
+scale = Vector2(0.8333333, 0.8333333)
+shape = SubResource("RectangleShape2D_0i4oc")
+metadata/_edit_lock_ = true
+
+[node name="DroppableTest2" type="Sprite2D" parent="." unique_id=808298551]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1008.00006, 536)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_jyumd")
+
+[node name="Droppable" parent="DroppableTest2" unique_id=540906714 node_paths=PackedStringArray("root", "draggable_root") instance=ExtResource("6_tyhf6")]
+root = NodePath("..")
+draggable_root = NodePath("../..")
+accepted_draggable_identifiers = Array[String](["item"])
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableTest2/Droppable" unique_id=468685678]
+scale = Vector2(0.8333333, 0.8333333)
+shape = SubResource("RectangleShape2D_0i4oc")
+metadata/_edit_lock_ = true
+
+[node name="DroppableTest3" type="Sprite2D" parent="." unique_id=1667947975]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(603.00006, 516)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_jyumd")
+
+[node name="Droppable" parent="DroppableTest3" unique_id=1106329061 node_paths=PackedStringArray("root", "draggable_root") instance=ExtResource("6_tyhf6")]
+root = NodePath("..")
+draggable_root = NodePath("../..")
+accepted_draggable_identifiers = Array[String](["item"])
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DroppableTest3/Droppable" unique_id=245890108]
+scale = Vector2(0.8333333, 0.8333333)
+shape = SubResource("RectangleShape2D_0i4oc")
+metadata/_edit_lock_ = true
+
+[node name="DraggableTest" type="Sprite2D" parent="." unique_id=829639104]
+position = Vector2(445, 966)
+texture = ExtResource("5_jyumd")
+
+[node name="Draggable" parent="DraggableTest" unique_id=1495946638 node_paths=PackedStringArray("root") instance=ExtResource("7_gieds")]
+root = NodePath("..")
+draggable_identifier = "item"
+animate_on_drop_accept = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableTest/Draggable" unique_id=622472889]
+shape = SubResource("RectangleShape2D_6mv5x")
+metadata/_edit_lock_ = true
+
+[node name="DraggableTest2" type="Sprite2D" parent="." unique_id=1441265508]
+position = Vector2(635, 961)
+texture = ExtResource("5_jyumd")
+
+[node name="Draggable" parent="DraggableTest2" unique_id=618327458 node_paths=PackedStringArray("root") instance=ExtResource("7_gieds")]
+root = NodePath("..")
+draggable_identifier = "item"
+animate_on_drop_accept = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableTest2/Draggable" unique_id=175864860]
+shape = SubResource("RectangleShape2D_6mv5x")
+metadata/_edit_lock_ = true
+
+[node name="DraggableTest3" type="Sprite2D" parent="." unique_id=1847803847]
+position = Vector2(829, 961)
+texture = ExtResource("5_jyumd")
+
+[node name="Draggable" parent="DraggableTest3" unique_id=197431270 node_paths=PackedStringArray("root") instance=ExtResource("7_gieds")]
+root = NodePath("..")
+draggable_identifier = "item"
+animate_on_drop_accept = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DraggableTest3/Draggable" unique_id=755751323]
+shape = SubResource("RectangleShape2D_6mv5x")
+metadata/_edit_lock_ = true
+
+[node name="DragManager" type="Node2D" parent="." unique_id=546876988]
+script = ExtResource("8_cokb5")
