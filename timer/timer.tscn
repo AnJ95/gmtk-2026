@@ -1,6 +1,46 @@
 [gd_scene format=3 uid="uid://u6krxpnho2mc"]
 
 [ext_resource type="Script" uid="uid://sjm1cy7xjb15" path="res://timer/timer.gd" id="1_qmwag"]
+[ext_resource type="Texture2D" uid="uid://cq4frj40wetsr" path="res://timer/egg.png" id="1_ucwqk"]
+[ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="3_aekwl"]
 
-[node name="Timer" type="Node2D" unique_id=552243422]
+[sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
+font = ExtResource("3_aekwl")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_aekwl"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.8560673, 0.8560673, 0.85606724, 1, 1, 1, 1, 0, 0.95596343, 0.9559633, 0.95596343, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_erfwr"]
+gradient = SubResource("Gradient_aekwl")
+
+[node name="Timer" type="Sprite2D" unique_id=1092890510]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ucwqk")
 script = ExtResource("1_qmwag")
+
+[node name="Label" type="Label" parent="." unique_id=46145476]
+offset_left = -280.0
+offset_top = -56.0
+offset_right = 282.0
+offset_bottom = 45.0
+text = "50 | 55 | 00 | 05 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95 | 
+"
+label_settings = SubResource("LabelSettings_4mnyk")
+clip_text = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1394632276]
+position = Vector2(0, 14)
+points = PackedVector2Array(-276, -2, 266, -2)
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=63713998]
+offset_left = -280.0
+offset_top = -82.0
+offset_right = 278.0
+offset_bottom = 36.0
+texture = SubResource("GradientTexture1D_erfwr")
