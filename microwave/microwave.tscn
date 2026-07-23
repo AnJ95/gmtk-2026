@@ -47,7 +47,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_7tji0"]
 resource_name = "close"
-length = 0.19999999999999998
+length = 0.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -88,7 +88,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_phhhb"]
 resource_name = "open"
-length = 0.19999999999999998
+length = 0.2
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -139,6 +139,7 @@ script = ExtResource("1_je6bm")
 
 [node name="AnimationPlayerDoor" type="AnimationPlayer" parent="." unique_id=1500721819]
 libraries/ = SubResource("AnimationLibrary_7tji0")
+autoplay = &"open"
 
 [node name="AnimationRoot" type="Node2D" parent="." unique_id=517830952]
 

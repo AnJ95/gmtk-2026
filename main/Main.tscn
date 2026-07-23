@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="4_c651c"]
+[ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
+shader = ExtResource("5_tv7ag")
 
 [node name="Main" type="Node2D" unique_id=1186793701]
 
@@ -15,3 +19,14 @@ position = Vector2(912, 542)
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
 
 [node name="Item" parent="." unique_id=1260310773 instance=ExtResource("4_c651c")]
+
+[node name="post_processing" type="CanvasLayer" parent="." unique_id=1592704776]
+follow_viewport_enabled = true
+
+[node name="color_shader" type="ColorRect" parent="post_processing" unique_id=643316038]
+material = SubResource("ShaderMaterial_4mnyk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
