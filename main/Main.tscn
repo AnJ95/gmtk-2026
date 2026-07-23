@@ -50,3 +50,4 @@ script = ExtResource("7_o80qs")
 
 [connection signal="level_start" from="LevelManager" to="Microwave" method="_on_level_manager_level_start"]
 [connection signal="level_start" from="LevelManager" to="Shelf" method="_on_level_manager_level_start"]
+[connection signal="level_start" from="LevelManager" to="Timer" method="_on_level_manager_level_start"]
