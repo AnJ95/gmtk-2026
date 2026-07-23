@@ -28,6 +28,7 @@ func _process(_dt):
 func drag_start():
 	dragging = true
 	drag_offset = root.global_position - get_global_mouse_position()
+	root.reparent(get_tree().root)
 	if current_droppable != null:
 		drag_undrop()
 	dragging_started.emit()
