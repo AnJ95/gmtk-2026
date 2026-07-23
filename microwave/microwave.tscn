@@ -134,6 +134,9 @@ _data = {
 &"open": SubResource("Animation_phhhb")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
+size = Vector2(1072, 572)
+
 [node name="Microwave" type="Node2D" unique_id=379186637]
 script = ExtResource("1_je6bm")
 
@@ -160,3 +163,13 @@ texture = ExtResource("4_7tji0")
 [node name="MicrowaveDoorOpen" type="Sprite2D" parent="AnimationRoot" unique_id=1466194552]
 visible = false
 texture = ExtResource("5_phvat")
+
+[node name="MouseHoverArea2D" type="Area2D" parent="." unique_id=1102843294]
+position = Vector2(-103, -175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseHoverArea2D" unique_id=727686717]
+shape = SubResource("RectangleShape2D_6mv5x")
+metadata/_edit_lock_ = true
+
+[connection signal="mouse_entered" from="MouseHoverArea2D" to="." method="_on_mouse_hover_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="MouseHoverArea2D" to="." method="_on_mouse_hover_area_2d_mouse_exited"]
