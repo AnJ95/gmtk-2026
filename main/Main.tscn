@@ -22,7 +22,7 @@ texture = ExtResource("1_0h8po")
 position = Vector2(750, 542)
 
 [node name="Shelf" parent="." unique_id=1827128195 instance=ExtResource("2_xwkvk")]
-position = Vector2(185, 962)
+position = Vector2(185, 940)
 end_position = Vector2(1200, 0)
 
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
