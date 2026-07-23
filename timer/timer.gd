@@ -23,6 +23,7 @@ func tick():
 	$tick.stream = ticks[tick_counter]
 	$tick.play()
 	tick_counter = (tick_counter + 1) % len(ticks)
+	$AnimationPlayer.play("shake")
 
 func _process(delta: float) -> void:
 	if $Label.visible_characters != int(time) + 22:
