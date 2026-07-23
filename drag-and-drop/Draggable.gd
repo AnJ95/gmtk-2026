@@ -15,7 +15,7 @@ var _enabled := true
 var dragging := false
 var drag_offset := Vector2.ZERO
 var current_droppable: Droppable = null
-var last_droppable: Droppable = null
+var initial_droppable: Droppable = null
 
 func _ready() -> void:
 	assert(root != null, "Draggable root must not be null")
@@ -43,9 +43,9 @@ func drag_end():
 				drag_drop(droppable)
 			else:
 				dropping_rejected.emit(droppable)
-				drag_drop(last_droppable)
+				drag_drop(initial_droppable)
 		else:
-			drag_drop(last_droppable)
+			drag_drop(initial_droppable)
 			
 
 func drag_move():
@@ -55,7 +55,8 @@ func drag_move():
 
 func drag_drop(droppable: Droppable):
 	current_droppable = droppable
-	last_droppable = droppable
+	if initial_droppable == null:
+		initial_droppable = droppable
 	droppable.draggable_drop(self)
 	root.reparent(droppable.root)
 	dropped.emit(droppable)
