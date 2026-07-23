@@ -1,10 +1,11 @@
-[gd_scene format=3 uid="uid://hp5bb5pnux7h"]
+[gd_scene format=3 uid="uid://creea13bpnotj"]
 
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="4_c651c"]
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
+[ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
 [ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="6_qtrhv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
@@ -27,6 +28,7 @@ position = Vector2(1493, 985)
 follow_viewport_enabled = true
 
 [node name="color_shader" type="ColorRect" parent="post_processing" unique_id=643316038]
+visible = false
 material = SubResource("ShaderMaterial_4mnyk")
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,6 +36,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("6_o80qs")
 
 [node name="DragManager" type="Node2D" parent="." unique_id=1821741519]
 script = ExtResource("6_qtrhv")
