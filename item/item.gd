@@ -74,3 +74,4 @@ func _process(delta: float) -> void:
 	elif state == States.DONE and time > target + RADIUS_OKAY:
 		state = States.BURNT
 		sprite.texture = burnt
+		$smoke.emitting = true
