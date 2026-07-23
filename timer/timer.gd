@@ -1,11 +1,16 @@
-extends Node2D
+extends Sprite2D
 
+@export var level_time: int = 60
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Label.visible_characters = 22
 
+	set_timer(90)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func set_timer(t: int):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_EXPO)
+	tween.tween_property($Label, "visible_characters", 22 + t , 2)
+
 func _process(delta: float) -> void:
 	pass

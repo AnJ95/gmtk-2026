@@ -27,10 +27,12 @@ offset_left = -280.0
 offset_top = -56.0
 offset_right = 282.0
 offset_bottom = 45.0
-text = "50 | 55 | 00 | 05 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95 | 
-"
+text = "50 | 55 | 00 | 05 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 | 85 | 90 | 95 | 00 | 05 | "
 label_settings = SubResource("LabelSettings_4mnyk")
+horizontal_alignment = 2
 clip_text = true
+visible_characters = 22
+visible_ratio = 0.18333334
 
 [node name="Line2D" type="Line2D" parent="." unique_id=1394632276]
 position = Vector2(0, 14)
