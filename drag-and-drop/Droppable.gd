@@ -8,6 +8,7 @@ signal draggable_undropped(draggable: Draggable)
 @export var draggable_root: Node2D
 @export var accepted_draggable_identifiers: Array[String] = []
 @export var custom_draggable_rect: Control
+@export var max_draggables: int = INF
 
 var current_draggables: Array[Draggable] = []
 var _enabled := true
@@ -36,7 +37,7 @@ func is_enabled() -> bool:
 	return _enabled
 
 func can_accept(draggable: Draggable) -> bool:
-	if accepted_draggable_identifiers.has(draggable.draggable_identifier):
+	if accepted_draggable_identifiers.has(draggable.draggable_identifier) and current_draggables.size() < max_draggables:
 		return not root.has_method("can_accept_draggable") or root.can_accept_draggable(draggable)
 	return false
 

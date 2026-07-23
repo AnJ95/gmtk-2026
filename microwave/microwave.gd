@@ -1,9 +1,39 @@
 extends Node2D
 
+const Slot = preload("res://microwave/slot/microwave_slot.tscn")
+
 @onready var sprite_door_closed = $AnimationRoot/MicrowaveDoorClosed
 @onready var sprite_door_half = $AnimationRoot/MicrowaveDoorHalf
 @onready var sprite_door_open = $AnimationRoot/MicrowaveDoorOpen
+@onready var inner_root = $AnimationRoot/InnerRoot
 
-func _enter_tree() -> void:
-	for child in $AnimationRoot/InnerRoot.get_children():
-		child.get_node("Droppable").draggable_root = get_parent()
+@export var slot_num := 3
+@export var slot_radius := Vector2(190, 65)
+@export var slot_rotation_speed = TAU / 10.0
+
+var current_runtime = 0
+var is_running = true
+
+func _ready() -> void:
+	spawn_slots()
+
+func spawn_slots() -> void:
+	for child in inner_root.get_children():
+		child.queue_free()
+
+	for i in range(slot_num):
+		var instance := Slot.instantiate() as Node2D
+		instance.position = calc_pos_at(i, 0)
+		instance.get_node("Droppable").draggable_root = get_parent()
+		inner_root.add_child(instance)
+
+
+func calc_pos_at(i: int, time: float):
+	var angle_step := TAU / slot_num
+	return Vector2.from_angle(angle_step * i + time * slot_rotation_speed) * slot_radius
+
+func _process(delta: float) -> void:
+	if is_running:
+		current_runtime += delta
+		for i in inner_root.get_child_count():
+			inner_root.get_child(i).position = calc_pos_at(i, current_runtime)
