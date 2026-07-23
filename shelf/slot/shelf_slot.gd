@@ -13,3 +13,6 @@ func _ready() -> void:
 	
 	$VBoxContainer/LabelItemName.text = current_item.item_name
 	$VBoxContainer/LabelItemTime.text = "%ds" % current_item.target
+
+func can_accept_draggable(draggable: Draggable) -> bool:
+	return draggable.root == current_item
