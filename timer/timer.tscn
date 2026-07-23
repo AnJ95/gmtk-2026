@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://sjm1cy7xjb15" path="res://timer/timer.gd" id="1_qmwag"]
 [ext_resource type="Texture2D" uid="uid://cq4frj40wetsr" path="res://timer/egg.png" id="1_ucwqk"]
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="3_aekwl"]
+[ext_resource type="AudioStream" uid="uid://c487c40ruh44m" path="res://timer/tick2.wav" id="4_7otmy"]
+[ext_resource type="AudioStream" uid="uid://2sjcpyyb3o0u" path="res://timer/tick1.wav" id="4_dbx2n"]
+[ext_resource type="AudioStream" uid="uid://cd2goo5illi1m" path="res://timer/tick3.wav" id="5_2w1p8"]
+[ext_resource type="AudioStream" uid="uid://b2gpy2urp7goc" path="res://timer/tick4.wav" id="6_64300"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
 font = ExtResource("3_aekwl")
@@ -21,6 +25,7 @@ gradient = SubResource("Gradient_aekwl")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_ucwqk")
 script = ExtResource("1_qmwag")
+ticks = Array[AudioStream]([ExtResource("4_dbx2n"), ExtResource("4_7otmy"), ExtResource("5_2w1p8"), ExtResource("6_64300")])
 
 [node name="Label" type="Label" parent="." unique_id=46145476]
 offset_left = -280.0
@@ -46,3 +51,6 @@ offset_top = -82.0
 offset_right = 278.0
 offset_bottom = 36.0
 texture = SubResource("GradientTexture1D_erfwr")
+
+[node name="tick" type="AudioStreamPlayer" parent="." unique_id=619820905]
+stream = ExtResource("4_dbx2n")
