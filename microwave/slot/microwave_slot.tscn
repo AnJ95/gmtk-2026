@@ -18,6 +18,7 @@ texture = ExtResource("2_wbq8w")
 [node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root") instance=ExtResource("3_sj3u3")]
 root = NodePath("..")
 accepted_draggable_identifiers = Array[String](["item"])
+max_draggables = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Droppable" unique_id=881158473]
 shape = SubResource("RectangleShape2D_6mv5x")

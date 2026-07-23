@@ -5,15 +5,14 @@ signal draggable_dropped(draggable: Draggable)
 signal draggable_undropped(draggable: Draggable)
 
 @export var root: Node2D
-@export var draggable_root: Node2D
 @export var accepted_draggable_identifiers: Array[String] = []
 @export var custom_draggable_rect: Control
+@export var max_draggables: int = INF
 
 var current_draggables: Array[Draggable] = []
 var _enabled := true
 
 func _ready() -> void:
-	assert(draggable_root != null, "Droppable must define root for Draggables")
 	assert(accepted_draggable_identifiers.size() > 0, "Droppable must at least have one accepted Draggable identifier")
 	if custom_draggable_rect:
 		custom_draggable_rect.connect("resized", _custom_draggable_rect_changed)
@@ -36,7 +35,7 @@ func is_enabled() -> bool:
 	return _enabled
 
 func can_accept(draggable: Draggable) -> bool:
-	if accepted_draggable_identifiers.has(draggable.draggable_identifier):
+	if accepted_draggable_identifiers.has(draggable.draggable_identifier) and current_draggables.size() < max_draggables:
 		return not root.has_method("can_accept_draggable") or root.can_accept_draggable(draggable)
 	return false
 
