@@ -1,19 +1,17 @@
 [gd_scene format=3 uid="uid://b4u2cix7jst61"]
 
 [ext_resource type="Script" uid="uid://cusbarayc5bda" path="res://shelf/slot/shelf_slot.gd" id="1_ylvlw"]
-[ext_resource type="Texture2D" uid="uid://dmbijnnjk2i2u" path="res://icon.svg" id="2_3j5f2"]
+[ext_resource type="Texture2D" uid="uid://c6oiyjrhhdpbl" path="res://shelf/slot/assets/plate.png" id="2_ylvlw"]
 [ext_resource type="PackedScene" uid="uid://ckair3wdkc88u" path="res://drag-and-drop/Droppable.tscn" id="3_epenv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yflk"]
-size = Vector2(260, 158)
+size = Vector2(294, 144)
 
 [node name="ShelfSlot" type="Node2D" unique_id=1680185440]
 script = ExtResource("1_ylvlw")
 
-[node name="DeleteMe" type="Sprite2D" parent="." unique_id=920068685]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(2.265625, 1.421875)
-texture = ExtResource("2_3j5f2")
+[node name="Plate" type="Sprite2D" parent="." unique_id=1842061043]
+texture = ExtResource("2_ylvlw")
 
 [node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root") instance=ExtResource("3_epenv")]
 root = NodePath("..")
@@ -21,4 +19,5 @@ accepted_draggable_identifiers = Array[String](["item"])
 max_draggables = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Droppable" unique_id=842727144]
+position = Vector2(0, -30)
 shape = SubResource("RectangleShape2D_0yflk")

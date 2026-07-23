@@ -10,8 +10,7 @@ size = Vector2(309, 122)
 [node name="MicrowaveSlot" type="Node2D" unique_id=1241206432]
 script = ExtResource("1_dr7dp")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=384205804]
-scale = Vector2(1.71875, 1.6093749)
+[node name="Plate" type="Sprite2D" parent="." unique_id=384205804]
 texture = ExtResource("2_dr7dp")
 
 [node name="Droppable" parent="." unique_id=372901968 node_paths=PackedStringArray("root") instance=ExtResource("3_sj3u3")]
