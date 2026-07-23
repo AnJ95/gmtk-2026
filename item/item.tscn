@@ -6,12 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kfbq2"]
 size = Vector2(128, 128)
 
-[sub_resource type="Gradient" id="Gradient_6t40p"]
+[sub_resource type="Gradient" id="Gradient_0yflk"]
 offsets = PackedFloat32Array(0.7409639, 0.8192771)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0.4509804, 0.4509804, 0.4509804, 0.627451, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_erfwr"]
-gradient = SubResource("Gradient_6t40p")
+gradient = SubResource("Gradient_0yflk")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.90000004, 0.1)
@@ -33,6 +33,17 @@ angle_max = 92.90001
 gravity = Vector3(0, -240, 0)
 scale_curve = SubResource("CurveTexture_x625f")
 turbulence_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_6t40p"]
+offsets = PackedFloat32Array(0.7409639, 0.8192771)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t40p"]
+gradient = SubResource("Gradient_6t40p")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.90000004, 0.1)
+metadata/_snap_enabled = true
 
 [sub_resource type="Curve" id="Curve_6t40p"]
 _data = [Vector2(0, 0.52808994), 0.0, 0.0, 0, 0, Vector2(0.9932432, 0), 0.0, 0.0, 0, 0]
@@ -77,7 +88,9 @@ process_material = SubResource("ParticleProcessMaterial_4mnyk")
 position = Vector2(0, -64)
 emitting = false
 amount = 16
-texture = SubResource("GradientTexture2D_erfwr")
+texture = SubResource("GradientTexture2D_6t40p")
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_erfwr")
+
+[connection signal="dropped" from="Draggable" to="." method="_on_draggable_dropped"]
