@@ -1,5 +1,7 @@
 extends Sprite2D
 
+signal level_start(level: Level)
+
 @export_category("Sound")
 @export var ticks: Array[AudioStream]
 
@@ -34,5 +36,7 @@ func _process(delta: float) -> void:
 		$music_test.stop()
 		$AnimationPlayer.play("ring")
 
-func _on_level_manager_level_start(level: Level) -> void:
-	set_timer(level.total_time)
+
+func _on_level_manager_level_prepare(level: Level) -> void:
+	await set_timer(level.total_time)
+	level_start.emit(level)

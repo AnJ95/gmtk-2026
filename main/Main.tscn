@@ -48,6 +48,8 @@ script = ExtResource("6_qtrhv")
 [node name="LevelManager" type="Node" parent="." unique_id=1836398542]
 script = ExtResource("7_o80qs")
 
-[connection signal="level_start" from="LevelManager" to="Microwave" method="_on_level_manager_level_start"]
-[connection signal="level_start" from="LevelManager" to="Shelf" method="_on_level_manager_level_start"]
-[connection signal="level_start" from="LevelManager" to="Timer" method="_on_level_manager_level_start"]
+[connection signal="level_start" from="Timer" to="Microwave" method="_on_timer_level_start"]
+[connection signal="level_start" from="Timer" to="Shelf" method="_on_timer_level_start"]
+[connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]
+[connection signal="level_prepare" from="LevelManager" to="Shelf" method="_on_level_manager_level_prepare"]
+[connection signal="level_prepare" from="LevelManager" to="Timer" method="_on_level_manager_level_prepare"]

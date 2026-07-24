@@ -67,3 +67,6 @@ func _on_draggable_dropped(droppable: Droppable) -> void:
 		in_microwave = true
 	else:
 		in_microwave = false
+
+func set_draggable(draggable: bool):
+	$Draggable.set_enabled(draggable)

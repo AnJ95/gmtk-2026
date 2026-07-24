@@ -13,7 +13,7 @@ const Slot = preload("res://microwave/slot/microwave_slot.tscn")
 
 var current_runtime = 0
 var is_open = false
-var is_running = true
+var is_running = false
 
 func spawn_slots() -> void:
 	for child in inner_root.get_children():
@@ -35,9 +35,12 @@ func _process(delta: float) -> void:
 			inner_root.get_child(i).position = calc_pos_at(i, current_runtime)
 
 
-func _on_level_manager_level_start(level: Level) -> void:
+func _on_level_manager_level_prepare(level: Level) -> void:
 	slot_num = level.num_microwave_slots
 	spawn_slots()
+	
+func _on_timer_level_start(level: Level) -> void:
+	is_running = true
 
 func set_open_state(new_open_state: bool):
 	if is_open != new_open_state:

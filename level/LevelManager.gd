@@ -1,6 +1,6 @@
 extends Node
 
-signal level_start(level: Level)
+signal level_prepare(level: Level)
 
 var levels := [
 	Level.new(60, 3, [
@@ -33,5 +33,5 @@ func _ready() -> void:
 	
 func start_level(level_id: int):
 	current_level_id = level_id
-	level_start.emit(levels[current_level_id])
+	level_prepare.emit(levels[current_level_id])
 	

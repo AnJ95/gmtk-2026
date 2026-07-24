@@ -15,3 +15,6 @@ func _ready() -> void:
 
 func can_accept_draggable(draggable: Draggable) -> bool:
 	return draggable.root == current_item
+
+func set_active(active: bool):
+	current_item.set_draggable(active)
