@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://lvib3s1qnsc2"]
+
+[ext_resource type="Script" uid="uid://v2w4wbw0ppwl" path="res://item/stamp/stamp.gd" id="1_sg1au"]
+[ext_resource type="Texture2D" uid="uid://uln643hfiyjs" path="res://assets/stamps_raw.png" id="2_bgf12"]
+[ext_resource type="Texture2D" uid="uid://d1w0m5qcxoeoe" path="res://assets/stamps_rare.png" id="3_ln8pt"]
+[ext_resource type="Texture2D" uid="uid://brc76rrjneqb6" path="res://assets/stamps_perfect.png" id="4_lyg0p"]
+[ext_resource type="Texture2D" uid="uid://tjl1valmbx6f" path="res://assets/stamps_well done.png" id="5_borpu"]
+[ext_resource type="Texture2D" uid="uid://crt5qte4g7bl0" path="res://assets/stamps_burnt.png" id="6_bba85"]
+[ext_resource type="AudioStream" uid="uid://pllo7lwigo1s" path="res://item/stamp/stamp1.wav" id="7_borpu"]
+[ext_resource type="AudioStream" uid="uid://dos0q0ac40ltq" path="res://item/stamp/stamp2.wav" id="8_bba85"]
+[ext_resource type="AudioStream" uid="uid://bvs54t3gb8xka" path="res://item/stamp/stamp3.wav" id="9_hym3w"]
+
+[sub_resource type="Gradient" id="Gradient_borpu"]
+offsets = PackedFloat32Array(0.5301205, 0.8192771)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_67f8u"]
+gradient = SubResource("Gradient_borpu")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8565217, 0.1173913)
+
+[sub_resource type="Curve" id="Curve_borpu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bba85"]
+curve = SubResource("Curve_borpu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ufl0x"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 101.89
+direction = Vector3(0, -1, 0)
+spread = 74.647
+initial_velocity_max = 462.36
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_bba85")
+
+[node name="stamp" type="Sprite2D" unique_id=1390055097]
+script = ExtResource("1_sg1au")
+stamps = Array[Texture2D]([ExtResource("2_bgf12"), ExtResource("3_ln8pt"), ExtResource("4_lyg0p"), ExtResource("5_borpu"), ExtResource("6_bba85")])
+sounds = Array[AudioStream]([ExtResource("7_borpu"), ExtResource("8_bba85"), ExtResource("9_hym3w")])
+
+[node name="particles" type="GPUParticles2D" parent="." unique_id=536650596]
+emitting = false
+amount = 16
+texture = SubResource("GradientTexture2D_67f8u")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ufl0x")
+
+[node name="bam" type="AudioStreamPlayer" parent="." unique_id=847016284]
