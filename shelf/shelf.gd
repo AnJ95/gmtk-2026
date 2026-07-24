@@ -29,7 +29,7 @@ func update_slot_positions() -> void:
 func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	spawn_slots(level.shelf_items)
 	
-func _on_timer_level_start(level: Level) -> void:
+func _on_level_manager_level_start(level_id: int, level: Level) -> void:
 	for slot in root.get_children():
 		slot.set_active(true)
 
@@ -37,14 +37,11 @@ func _on_timer_level_end() -> void:
 	for slot in root.get_children():
 		slot.set_active(false)
 		slot.move_item_back_to_shelf()
-	
-	await get_tree().create_timer(2).timeout
-	
+
+func _on_level_manager_rating_start() -> void:
+	await get_tree().create_timer(1.0).timeout
 	for slot in root.get_children():
 		slot.show_rating()
 		await get_tree().create_timer(0.3).timeout
 	
 	rating_end.emit()
-	
-	
-	

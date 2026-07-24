@@ -3,17 +3,46 @@
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="1_cni3f"]
 [ext_resource type="Texture2D" uid="uid://d1nslcivqvi1h" path="res://ui/theme/button.png" id="2_q67kw"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bipdn"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.3)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bipdn"]
+texture = ExtResource("2_q67kw")
+texture_margin_left = 10.0
+texture_margin_top = 25.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 7.0
+expand_margin_right = 7.0
+region_rect = Rect2(0, 300, 300, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cni3f"]
+texture = ExtResource("2_q67kw")
+texture_margin_left = 10.0
+texture_margin_top = 25.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 7.0
+expand_margin_right = 7.0
+region_rect = Rect2(0, 100, 300, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1qth"]
+texture = ExtResource("2_q67kw")
+texture_margin_left = 10.0
+texture_margin_top = 25.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 7.0
+expand_margin_right = 7.0
+region_rect = Rect2(0, 0, 300, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q67kw"]
+content_margin_top = 15.0
+texture = ExtResource("2_q67kw")
+texture_margin_left = 10.0
+texture_margin_top = 25.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+expand_margin_left = 7.0
+expand_margin_right = 7.0
+region_rect = Rect2(0, 200, 300, 100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_41ywq"]
 content_margin_left = 4.0
@@ -35,37 +64,6 @@ expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1apww"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.225, 0.225, 0.225, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u1qth"]
-texture = ExtResource("2_q67kw")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 25.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4v5r2"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0, 0, 0, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cni3f"]
 
@@ -89,11 +87,11 @@ Button/constants/icon_max_width = 0
 Button/constants/outline_size = 7
 Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_cni3f")
-Button/styles/disabled = SubResource("StyleBoxFlat_bipdn")
-Button/styles/focus = SubResource("StyleBoxFlat_41ywq")
-Button/styles/hover = SubResource("StyleBoxFlat_1apww")
+Button/styles/disabled = SubResource("StyleBoxTexture_bipdn")
+Button/styles/focus = SubResource("StyleBoxTexture_cni3f")
+Button/styles/hover = SubResource("StyleBoxTexture_cni3f")
 Button/styles/normal = SubResource("StyleBoxTexture_u1qth")
-Button/styles/pressed = SubResource("StyleBoxFlat_4v5r2")
+Button/styles/pressed = SubResource("StyleBoxTexture_q67kw")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)

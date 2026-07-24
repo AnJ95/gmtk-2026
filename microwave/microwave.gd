@@ -39,7 +39,7 @@ func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	slot_num = level.num_microwave_slots
 	spawn_slots()
 	
-func _on_timer_level_start(level: Level) -> void:
+func _on_level_manager_level_start(level_id: int, level: Level) -> void:
 	is_running = true
 
 func _on_timer_level_end() -> void:

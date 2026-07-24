@@ -1,6 +1,8 @@
 extends Node
 
 signal level_prepare(level_id: int, level: Level)
+signal level_start(level_id: int, level: Level)
+signal rating_start()
 
 var levels := [
 	Level.new(10, 3, [
@@ -35,5 +37,11 @@ func start_level(level_id: int):
 	current_level_id = level_id
 	level_prepare.emit(current_level_id, levels[current_level_id])
 
-func _on_shelf_rating_end() -> void:
+func _on_button_start_pressed() -> void:
+	level_start.emit(current_level_id, levels[current_level_id])
+
+func _on_button_continue_pressed() -> void:
 	start_level(current_level_id + 1)
+
+func _on_timer_level_end() -> void:
+	rating_start.emit()

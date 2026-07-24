@@ -1,6 +1,6 @@
 extends Sprite2D
 
-signal level_start(level: Level)
+signal level_prepared(level_id: int, level: Level)
 signal level_end()
 
 @export_category("Sound")
@@ -15,8 +15,6 @@ func set_timer(t: int):
 	tween.set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(self, "time", t , 4)
 	await tween.finished
-	is_counting = true
-	$music_test.play()
 
 func tick():
 	$Label.visible_characters = int(self.time) + 22
@@ -38,7 +36,10 @@ func _process(delta: float) -> void:
 		$AnimationPlayer.play("ring")
 		level_end.emit()
 
-
-func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
+func _on_level_manager_level_prepare(level_id: int, level: Level) -> void:
 	await set_timer(level.total_time)
-	level_start.emit(level)
+	level_prepared.emit(level_id, level)
+
+func _on_level_manager_level_start(level_id: int, level: Level) -> void:
+	is_counting = true
+	$music_test.play()

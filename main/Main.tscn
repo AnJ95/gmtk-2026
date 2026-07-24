@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cj3c245ga5s5i" path="res://level/LevelManager.gd" id="7_o80qs"]
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="10_7a1mn"]
 [ext_resource type="Texture2D" uid="uid://cuwc8gjy0mw1p" path="res://ui/point/assets/point_100.png" id="11_m4geg"]
+[ext_resource type="PackedScene" uid="uid://dff22pedg3npl" path="res://ui/HidingButton.tscn" id="12_50616"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
 shader = ExtResource("5_tv7ag")
@@ -168,13 +169,37 @@ offset_right = 316.0
 offset_bottom = 81.0
 texture = ExtResource("11_m4geg")
 
-[connection signal="rating_end" from="Shelf" to="LevelManager" method="_on_shelf_rating_end"]
+[node name="ButtonStart" parent="." unique_id=1754987810 instance=ExtResource("12_50616")]
+offset_left = 2100.0
+offset_top = 400.0
+offset_right = 2358.0017
+offset_bottom = 478.0
+show_position = Vector2(1573, 400)
+hide_position = Vector2(2100, 400)
+
+[node name="ButtonContinue" parent="." unique_id=855229110 instance=ExtResource("12_50616")]
+offset_left = 2100.0
+offset_top = 400.0
+offset_right = 2358.0017
+offset_bottom = 478.0
+text = "Continue"
+show_position = Vector2(1573, 400)
+hide_position = Vector2(2100, 400)
+
+[connection signal="rating_end" from="Shelf" to="." method="_on_shelf_rating_end"]
 [connection signal="level_end" from="Timer" to="." method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="Microwave" method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="Shelf" method="_on_timer_level_end"]
-[connection signal="level_start" from="Timer" to="Microwave" method="_on_timer_level_start"]
-[connection signal="level_start" from="Timer" to="Shelf" method="_on_timer_level_start"]
+[connection signal="level_end" from="Timer" to="LevelManager" method="_on_timer_level_end"]
+[connection signal="level_prepared" from="Timer" to="." method="_on_timer_level_prepared"]
 [connection signal="level_prepare" from="LevelManager" to="." method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Shelf" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Timer" method="_on_level_manager_level_prepare"]
+[connection signal="level_start" from="LevelManager" to="Microwave" method="_on_level_manager_level_start"]
+[connection signal="level_start" from="LevelManager" to="Shelf" method="_on_level_manager_level_start"]
+[connection signal="level_start" from="LevelManager" to="Timer" method="_on_level_manager_level_start"]
+[connection signal="rating_start" from="LevelManager" to="." method="_on_level_manager_rating_start"]
+[connection signal="rating_start" from="LevelManager" to="Shelf" method="_on_level_manager_rating_start"]
+[connection signal="pressed" from="ButtonStart" to="LevelManager" method="_on_button_start_pressed"]
+[connection signal="pressed" from="ButtonContinue" to="LevelManager" method="_on_button_continue_pressed"]

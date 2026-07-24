@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dff22pedg3npl"]
+
+[ext_resource type="Theme" uid="uid://cmwd1olpk47n7" path="res://ui/theme/theme.tres" id="1_tbi3k"]
+[ext_resource type="Script" uid="uid://5nxmys3vrl6v" path="res://ui/hiding_button.gd" id="2_rgr0d"]
+
+[node name="HidingButton" type="Button" unique_id=1754987810]
+offset_left = 500.0
+offset_right = 758.0017
+offset_bottom = 78.0
+theme = ExtResource("1_tbi3k")
+text = "Start Level"
+script = ExtResource("2_rgr0d")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
