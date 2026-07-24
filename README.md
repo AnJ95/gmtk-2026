@@ -6,18 +6,18 @@ Microwave Madness? Ultrawave?
 
 - Bewertungssystem
   - Punkteanzeige
-    - Kochmütze
+	- Kochmütze
   - mit Stempeln usw
   - Kategorien
-    - Rare
-    - Raw
-    - Perfect
-    - Well Done
-    - Burnt
+	- Rare
+	- Raw
+	- Perfect
+	- Well Done
+	- Burnt
 - Mehr Items
-  - Ei
   - Polkappen
-  - Essensreste
+  - Tupperbox
+  - Burger
   - Eisskulptur
   - iPhone
   - Thermometer
@@ -25,8 +25,12 @@ Microwave Madness? Ultrawave?
   - Trauben
   - Marshmellows
   - Kaba
+<<<<<<< HEAD
   - Eviction Notice
-    - Divorce
+	- Divorce
+=======
+  - Mais/Popcorn
+>>>>>>> 88dff95 (Add item egg)
 - Random-Events
   - Steckdose
   - Power Surge -> macht, dass Mikrowelle schneller dreht

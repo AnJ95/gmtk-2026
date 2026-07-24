@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c45mhj5ioicdg"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_cl7qx"]
+[ext_resource type="Texture2D" uid="uid://dq01ts8p2vas" path="res://item/items/assets/egg_raw.png" id="2_cl7qx"]
+[ext_resource type="Texture2D" uid="uid://xnr0qnu66uxf" path="res://item/items/assets/egg_done.png" id="3_rk0os"]
+[ext_resource type="Texture2D" uid="uid://o3x2b473p071" path="res://item/items/assets/egg_burnt.png" id="4_y3ap8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(104, 129)
+
+[node name="ItemEgg" unique_id=1400601987 instance=ExtResource("1_cl7qx")]
+item_name = "Egg"
+target = 10
+raw = ExtResource("2_cl7qx")
+done = ExtResource("3_rk0os")
+burnt = ExtResource("4_y3ap8")
+particle_color = Color(0.5176471, 0.45490196, 0.21960784, 1)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -29)
+texture = ExtResource("2_cl7qx")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -63.5)
+shape = SubResource("RectangleShape2D_22orn")
