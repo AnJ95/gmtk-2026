@@ -41,6 +41,7 @@ scale_curve = SubResource("CurveTexture_bba85")
 script = ExtResource("1_sg1au")
 stamps = Array[Texture2D]([ExtResource("2_bgf12"), ExtResource("3_ln8pt"), ExtResource("4_lyg0p"), ExtResource("5_borpu"), ExtResource("6_bba85")])
 sounds = Array[AudioStream]([ExtResource("7_borpu"), ExtResource("8_bba85"), ExtResource("9_hym3w")])
+colors = Array[Color]([Color(1, 0, 0, 1), Color(0.7647059, 0.76862746, 0, 1), Color(0, 1, 0, 1), Color(0.8117647, 0.8117647, 0, 1), Color(1, 0, 0, 1)])
 
 [node name="particles" type="GPUParticles2D" parent="." unique_id=536650596]
 emitting = false

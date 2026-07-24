@@ -10,6 +10,8 @@ func _ready() -> void:
 	self.visible = false
 	sound_count = randi_range(0, 2)
 	$bam.stream = sounds[sound_count]
+	self.rotation_degrees = randf_range(-30, 30)
+	self.position.y -= 20
 
 func stamp(rating: int):
 	$bam.play()
