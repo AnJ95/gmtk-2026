@@ -21,6 +21,7 @@ Microwave Madness? Ultrawave?
   - Power Surge -> macht, dass Mikrowelle schneller dreht
 - Menü
 - Next-Level-Fluss
+  - Teller verbessern
 - Sounds
   - Tür (auf / zu)
   - Greifen / Ablegen
