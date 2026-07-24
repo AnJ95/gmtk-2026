@@ -42,7 +42,7 @@ func _on_timer_level_end() -> void:
 	
 	for slot in root.get_children():
 		slot.show_rating()
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.3).timeout
 	
 	rating_end.emit()
 	
