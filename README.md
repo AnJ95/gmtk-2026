@@ -1,6 +1,6 @@
 # GMTK GameJam 2026
 
-Microwave Madness? Ultrawave?
+Microwave Everything All At Once
 
 ## TO DO
 
@@ -19,7 +19,9 @@ Microwave Madness? Ultrawave?
 - Random-Events
   - Steckdose
   - Power Surge -> macht, dass Mikrowelle schneller dreht
-- Menü
+- Main-Menü
+	- How-to-Play
+	- Attributions
 - Next-Level-Fluss
   - Teller verbessern
 - Sounds
@@ -29,6 +31,12 @@ Microwave Madness? Ultrawave?
   - vielleicht einfach im Hauptmenü als Text?
 - Mauscursor
   - sollte nicht zu schräg sein, damit man die Eieruhr gut sehen kann
+- Animation bei Point Gain
+- No Microwave open in level_prepare
+- Show flavor text in microwave screen on level_prepare
+	- Level+Modellierung
+	- Anim Text scrolling
+- Musik dynamisch pro Level
 - Grafik
   - Steckdose
   - Wand schmücken

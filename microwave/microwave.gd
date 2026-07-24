@@ -6,6 +6,7 @@ const Slot = preload("res://microwave/slot/microwave_slot.tscn")
 @onready var sprite_door_half = $AnimationRoot/MicrowaveDoorHalf
 @onready var sprite_door_open = $AnimationRoot/MicrowaveDoorOpen
 @onready var inner_root = $AnimationRoot/InnerRoot
+@onready var screen = $Screen
 
 @export var slot_num := 3
 @export var slot_radius := Vector2(220, 75)
@@ -37,10 +38,12 @@ func _process(delta: float) -> void:
 
 func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	slot_num = level.num_microwave_slots
+	show_microwave_text(level.intro_text)
 	spawn_slots()
 	
 func _on_level_manager_level_start(level_id: int, level: Level) -> void:
 	is_running = true
+	hide_microwave_text()
 
 func _on_timer_level_end() -> void:
 	is_running = false
@@ -55,3 +58,10 @@ func _on_mouse_hover_area_2d_mouse_entered() -> void:
 
 func _on_mouse_hover_area_2d_mouse_exited() -> void:
 	set_open_state(false)
+
+func show_microwave_text(text: String) -> void:
+	screen.visible = true
+	screen.show_text(text)
+	
+func hide_microwave_text():
+	screen.visible = false
