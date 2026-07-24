@@ -35,5 +35,5 @@ func start_level(level_id: int):
 	current_level_id = level_id
 	level_prepare.emit(levels[current_level_id])
 
-func _on_rating_rating_end() -> void:
+func _on_shelf_rating_end() -> void:
 	start_level(current_level_id + 1)

@@ -1,5 +1,7 @@
 extends Node2D
 
+signal rating_end
+
 const Slot = preload("res://shelf/slot/shelf_slot.tscn")
 @export var end_position = Vector2.ZERO
 @onready var root = self
@@ -26,3 +28,14 @@ func _on_timer_level_end() -> void:
 	for slot in root.get_children():
 		slot.set_active(false)
 		slot.move_item_back_to_shelf()
+	
+	await get_tree().create_timer(2).timeout
+	
+	for slot in root.get_children():
+		slot.show_rating()
+		await get_tree().create_timer(2).timeout
+	
+	rating_end.emit()
+	
+	
+	
