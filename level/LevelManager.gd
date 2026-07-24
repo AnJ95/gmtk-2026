@@ -1,11 +1,14 @@
 extends Node
 
+const MUSIC_TITLE = preload("res://music.wav")
+const MUSIC_LACRIMOSA = preload("res://lacrimosa.wav")
+
 signal level_prepare(level_id: int, level: Level)
 signal level_start(level_id: int, level: Level)
 signal rating_start()
 
 var levels := [
-	Level.new(10, 3, [
+	Level.new(10, 3, MUSIC_TITLE, [
 		preload("res://item/items/item_wine_bottle.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_chinese_takeout.tscn"),
@@ -15,7 +18,7 @@ var levels := [
 	], "[b]Lorem ipsum dolor sit amet[/b]
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
-	Level.new(45, 3, [
+	Level.new(45, 3, MUSIC_TITLE, [
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
@@ -23,7 +26,7 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 	], "[b]Lorem ipsum dolor sit amet[/b]
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
-	Level.new(60, 4, [
+	Level.new(60, 4, MUSIC_LACRIMOSA, [
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_pizza.tscn"),

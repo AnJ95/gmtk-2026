@@ -35,7 +35,6 @@ Microwave Everything All At Once
 - Show flavor text in microwave screen on level_prepare
 	- Level+Modellierung
 	- Anim Text scrolling
-- Musik dynamisch pro Level
 - Grafik
   - Steckdose
   - Wand schmücken

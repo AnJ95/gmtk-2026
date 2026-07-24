@@ -2,11 +2,13 @@ class_name Level
 
 var total_time: int
 var num_microwave_slots: int
+var music: AudioStream
 var shelf_items: Array[PackedScene]
 var intro_text: String
 
-func _init(total_time: int, num_microwave_slots: int, shelf_items: Array[PackedScene], intro_text: String) -> void:
+func _init(total_time: int, num_microwave_slots: int, music: AudioStream, shelf_items: Array[PackedScene], intro_text: String) -> void:
 	self.total_time = total_time
 	self.num_microwave_slots = num_microwave_slots
+	self.music = music
 	self.shelf_items = shelf_items
 	self.intro_text = intro_text

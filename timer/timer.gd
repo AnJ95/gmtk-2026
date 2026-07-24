@@ -42,4 +42,5 @@ func _on_level_manager_level_prepare(level_id: int, level: Level) -> void:
 
 func _on_level_manager_level_start(level_id: int, level: Level) -> void:
 	is_counting = true
+	$music_test.stream = level.music
 	$music_test.play()
