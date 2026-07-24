@@ -6,7 +6,7 @@ var levels := [
 	Level.new(30, 3, [
 		preload("res://item/items/item_wine_bottle.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
-		preload("res://item/items/item_pizza.tscn")
+		preload("res://item/items/item_chinese_takeout.tscn")
 	]),
 	Level.new(45, 3, [
 		preload("res://item/items/item_pizza.tscn"),
