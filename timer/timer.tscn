@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cd2goo5illi1m" path="res://timer/tick3.wav" id="5_2w1p8"]
 [ext_resource type="AudioStream" uid="uid://b2gpy2urp7goc" path="res://timer/tick4.wav" id="6_64300"]
 [ext_resource type="AudioStream" uid="uid://c2w1cogbp75cb" path="res://timer/ring.wav" id="8_2w1p8"]
-[ext_resource type="AudioStream" uid="uid://b64jyyyf05ywr" path="res://music.wav" id="9_64300"]
+[ext_resource type="AudioStream" uid="uid://kiya1qtur28v" path="res://lacrimosa.wav" id="9_64300"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
 font = ExtResource("3_aekwl")
