@@ -1,9 +1,9 @@
 extends Node
 
-signal level_start(level: Level)
+signal level_prepare(level: Level)
 
 var levels := [
-	Level.new(60, 3, [
+	Level.new(10, 3, [
 		preload("res://item/items/item_wine_bottle.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_chinese_takeout.tscn"),
@@ -33,5 +33,7 @@ func _ready() -> void:
 	
 func start_level(level_id: int):
 	current_level_id = level_id
-	level_start.emit(levels[current_level_id])
-	
+	level_prepare.emit(levels[current_level_id])
+
+func _on_rating_rating_end() -> void:
+	start_level(current_level_id + 1)
