@@ -15,6 +15,8 @@ extends Node2D
 @export var particle_color: Color
 @onready var sprite: Sprite2D = $Sprite2D
 
+const Stamp = preload("res://item/stamp/stamp.tscn")
+
 var time: float = 0.0
 var in_microwave: bool = false
 
@@ -37,12 +39,21 @@ func _set_sprite_texture(texture: Texture2D) -> void:
 	if sprite_node:
 		sprite_node.texture = texture
 
-func score() -> int:
-	if time > target - RADIUS_PERFECT and time < target + RADIUS_PERFECT:
-		return 2
-	elif time > target - RADIUS_OKAY and time < target + RADIUS_OKAY:
+func show_rating():
+	var stamp = Stamp.instantiate()
+	add_child(stamp)
+	stamp.stamp(rating())
+
+func rating() -> int:
+	if time < target - RADIUS_OKAY:
+		return 0
+	elif time > target + RADIUS_OKAY:
+		return 4
+	elif time < target - RADIUS_PERFECT:
 		return 1
-	return 0
+	elif time > target + RADIUS_PERFECT:
+		return 3
+	return 2
 
 func _process(delta: float) -> void:
 	# Prevent the cooking logic from running inside the editor.
