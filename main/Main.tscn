@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
 [ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="6_qtrhv"]
 [ext_resource type="Script" uid="uid://cj3c245ga5s5i" path="res://level/LevelManager.gd" id="7_o80qs"]
+[ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="10_7a1mn"]
+[ext_resource type="Texture2D" uid="uid://cuwc8gjy0mw1p" path="res://ui/point/assets/point_100.png" id="11_m4geg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
 shader = ExtResource("5_tv7ag")
@@ -103,6 +105,12 @@ _data = {
 &"scoring": SubResource("Animation_bg6xb")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
+font = ExtResource("10_7a1mn")
+font_size = 64
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Main" type="Node2D" unique_id=1186793701]
 script = ExtResource("1_bg6xb")
 
@@ -142,6 +150,23 @@ script = ExtResource("7_o80qs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1424524092]
 libraries/ = SubResource("AnimationLibrary_7a1mn")
+
+[node name="points" type="Label" parent="." unique_id=1453678168]
+offset_left = 1574.0
+offset_top = 34.0
+offset_right = 1785.0
+offset_bottom = 110.0
+text = "00000"
+label_settings = SubResource("LabelSettings_4mnyk")
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="points" unique_id=1232837272]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -19.0
+offset_right = 316.0
+offset_bottom = 81.0
+texture = ExtResource("11_m4geg")
 
 [connection signal="rating_end" from="Shelf" to="LevelManager" method="_on_shelf_rating_end"]
 [connection signal="level_end" from="Timer" to="." method="_on_timer_level_end"]

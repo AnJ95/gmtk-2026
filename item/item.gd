@@ -29,10 +29,12 @@ enum States {
 var state: States = States.RAW
 const RADIUS_PERFECT := 1
 const RADIUS_OKAY := 3
+var main: Node
 
 func _ready() -> void:
 	_set_sprite_texture(raw)
 	$explosion.texture.gradient.set_color(0, particle_color)
+	main = get_tree().root.get_node("Main")
 
 func _set_sprite_texture(texture: Texture2D) -> void:
 	var sprite_node := $Sprite2D as Sprite2D
@@ -43,6 +45,7 @@ func show_rating():
 	var stamp = Stamp.instantiate()
 	add_child(stamp)
 	stamp.stamp(rating())
+	score()
 
 func rating() -> int:
 	if time < target - RADIUS_OKAY:
@@ -54,6 +57,10 @@ func rating() -> int:
 	elif time > target + RADIUS_PERFECT:
 		return 3
 	return 2
+
+func score():
+	var sco = 2 - abs(2 - rating())
+	main.score(sco)
 
 func _process(delta: float) -> void:
 	# Prevent the cooking logic from running inside the editor.
