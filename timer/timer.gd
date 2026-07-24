@@ -39,6 +39,6 @@ func _process(delta: float) -> void:
 		level_end.emit()
 
 
-func _on_level_manager_level_prepare(level: Level) -> void:
+func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	await set_timer(level.total_time)
 	level_start.emit(level)
