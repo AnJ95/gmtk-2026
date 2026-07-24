@@ -32,7 +32,6 @@ Microwave Everything All At Once
 - Mauscursor
   - sollte nicht zu schräg sein, damit man die Eieruhr gut sehen kann
 - Animation bei Point Gain
-- No Microwave open in level_prepare
 - Show flavor text in microwave screen on level_prepare
 	- Level+Modellierung
 	- Anim Text scrolling
