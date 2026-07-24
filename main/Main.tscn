@@ -26,7 +26,6 @@ position = Vector2(185, 940)
 end_position = Vector2(1200, 0)
 
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
-position = Vector2(1756, 988)
 
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=1592704776]
 follow_viewport_enabled = true

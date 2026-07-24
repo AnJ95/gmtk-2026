@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cd2goo5illi1m" path="res://timer/tick3.wav" id="5_2w1p8"]
 [ext_resource type="AudioStream" uid="uid://b2gpy2urp7goc" path="res://timer/tick4.wav" id="6_64300"]
 [ext_resource type="AudioStream" uid="uid://c2w1cogbp75cb" path="res://timer/ring.wav" id="8_2w1p8"]
+[ext_resource type="AudioStream" uid="uid://b64jyyyf05ywr" path="res://music.wav" id="9_64300"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_4mnyk"]
 font = ExtResource("3_aekwl")
@@ -144,3 +145,7 @@ stream = ExtResource("4_dbx2n")
 
 [node name="ring" type="AudioStreamPlayer" parent="." unique_id=216577455]
 stream = ExtResource("8_2w1p8")
+
+[node name="music_test" type="AudioStreamPlayer" parent="." unique_id=1352357595]
+stream = ExtResource("9_64300")
+volume_db = -6.0

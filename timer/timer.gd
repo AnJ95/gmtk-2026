@@ -13,6 +13,7 @@ func set_timer(t: int):
 	tween.tween_property(self, "time", t , 4)
 	await tween.finished
 	is_counting = true
+	$music_test.play()
 
 func tick():
 	$Label.visible_characters = int(self.time) + 22
@@ -30,6 +31,7 @@ func _process(delta: float) -> void:
 	elif is_counting and time < 0:
 		$ring.play()
 		is_counting = false
+		$music_test.stop()
 		$AnimationPlayer.play("ring")
 
 
