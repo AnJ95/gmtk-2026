@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
+[ext_resource type="PackedScene" uid="uid://dqcb6mpfob5vu" path="res://rating/rating.tscn" id="5_bg6xb"]
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
 [ext_resource type="Script" uid="uid://betvtnl70cnxq" path="res://drag-and-drop/DragManager.gd" id="6_qtrhv"]
@@ -28,6 +29,8 @@ end_position = Vector2(1400, 0)
 [node name="Timer" parent="." unique_id=552243422 instance=ExtResource("3_xwkvk")]
 position = Vector2(1756, 988)
 
+[node name="Rating" parent="." unique_id=774123488 instance=ExtResource("5_bg6xb")]
+
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=1592704776]
 follow_viewport_enabled = true
 
@@ -48,6 +51,8 @@ script = ExtResource("6_qtrhv")
 [node name="LevelManager" type="Node" parent="." unique_id=1836398542]
 script = ExtResource("7_o80qs")
 
+[connection signal="level_end" from="Timer" to="Microwave" method="_on_timer_level_end"]
+[connection signal="level_end" from="Timer" to="Shelf" method="_on_timer_level_end"]
 [connection signal="level_start" from="Timer" to="Microwave" method="_on_timer_level_start"]
 [connection signal="level_start" from="Timer" to="Shelf" method="_on_timer_level_start"]
 [connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]

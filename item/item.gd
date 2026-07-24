@@ -70,3 +70,6 @@ func _on_draggable_dropped(droppable: Droppable) -> void:
 
 func set_draggable(draggable: bool):
 	$Draggable.set_enabled(draggable)
+
+func move_back_to_shelf():
+	$drop

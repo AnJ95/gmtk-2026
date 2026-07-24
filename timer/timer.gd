@@ -1,6 +1,7 @@
 extends Sprite2D
 
 signal level_start(level: Level)
+signal level_end()
 
 @export_category("Sound")
 @export var ticks: Array[AudioStream]
@@ -35,6 +36,7 @@ func _process(delta: float) -> void:
 		is_counting = false
 		$music_test.stop()
 		$AnimationPlayer.play("ring")
+		level_end.emit()
 
 
 func _on_level_manager_level_prepare(level: Level) -> void:

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqcb6mpfob5vu"]
+
+[ext_resource type="Script" uid="uid://b11il68n2fqof" path="res://rating/rating.gd" id="1_kjc8a"]
+
+[node name="Rating" type="Node2D" unique_id=774123488]
+script = ExtResource("1_kjc8a")

@@ -21,3 +21,8 @@ func _on_level_manager_level_prepare(level: Level) -> void:
 func _on_timer_level_start(level: Level) -> void:
 	for slot in root.get_children():
 		slot.set_active(true)
+
+func _on_timer_level_end() -> void:
+	for slot in root.get_children():
+		slot.set_active(false)
+		slot.move_item_back_to_shelf()

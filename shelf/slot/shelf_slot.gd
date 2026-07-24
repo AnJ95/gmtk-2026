@@ -18,3 +18,6 @@ func can_accept_draggable(draggable: Draggable) -> bool:
 
 func set_active(active: bool):
 	current_item.set_draggable(active)
+	
+func move_item_back_to_shelf():
+	current_item.get_node("Draggable").drag_drop($Droppable)

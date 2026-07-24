@@ -42,6 +42,9 @@ func _on_level_manager_level_prepare(level: Level) -> void:
 func _on_timer_level_start(level: Level) -> void:
 	is_running = true
 
+func _on_timer_level_end() -> void:
+	is_running = false
+	
 func set_open_state(new_open_state: bool):
 	if is_open != new_open_state:
 		is_open = new_open_state
