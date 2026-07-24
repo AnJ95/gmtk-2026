@@ -53,8 +53,10 @@ script = ExtResource("7_o80qs")
 
 [connection signal="level_end" from="Timer" to="Microwave" method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="Shelf" method="_on_timer_level_end"]
+[connection signal="level_end" from="Timer" to="Rating" method="_on_timer_level_end"]
 [connection signal="level_start" from="Timer" to="Microwave" method="_on_timer_level_start"]
 [connection signal="level_start" from="Timer" to="Shelf" method="_on_timer_level_start"]
+[connection signal="rating_end" from="Rating" to="LevelManager" method="_on_rating_rating_end"]
 [connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Shelf" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Timer" method="_on_level_manager_level_prepare"]
