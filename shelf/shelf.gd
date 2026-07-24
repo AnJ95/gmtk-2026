@@ -3,7 +3,11 @@ extends Node2D
 signal rating_end
 
 const Slot = preload("res://shelf/slot/shelf_slot.tscn")
-@export var end_position = Vector2.ZERO
+@export var end_position = Vector2.ZERO:
+	set(value):
+		end_position = value
+		update_slot_positions()
+		
 @onready var root = self
 
 func spawn_slots(items: Array[PackedScene]) -> void:
@@ -17,7 +21,12 @@ func spawn_slots(items: Array[PackedScene]) -> void:
 		root.add_child(instance)
 		instance.call_deferred("set_active", false)
 
-func _on_level_manager_level_prepare(level: Level) -> void:
+func update_slot_positions() -> void:
+	if root != null:
+		for i in range(root.get_child_count()):
+			root.get_child(i).position = end_position * (i / float(root.get_child_count()))
+
+func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	spawn_slots(level.shelf_items)
 	
 func _on_timer_level_start(level: Level) -> void:

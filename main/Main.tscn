@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hp5bb5pnux7h"]
 
 [ext_resource type="Texture2D" uid="uid://v53bg1cy7glt" path="res://main/assets/background.png" id="1_0h8po"]
+[ext_resource type="Script" uid="uid://gol3qkghcwvb" path="res://main/main.gd" id="1_bg6xb"]
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
@@ -12,7 +13,98 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
 shader = ExtResource("5_tv7ag")
 
+[sub_resource type="Animation" id="Animation_0h8po"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Timer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1756, 988)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shelf:end_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1400, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7a1mn"]
+resource_name = "playing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Timer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1756, 1308), Vector2(1756, 988)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shelf:end_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1800, 0), Vector2(1400, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bg6xb"]
+resource_name = "scoring"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Timer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1756, 988), Vector2(1756, 1308)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shelf:end_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1400, 0), Vector2(1800, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7a1mn"]
+_data = {
+&"RESET": SubResource("Animation_0h8po"),
+&"playing": SubResource("Animation_7a1mn"),
+&"scoring": SubResource("Animation_bg6xb")
+}
+
 [node name="Main" type="Node2D" unique_id=1186793701]
+script = ExtResource("1_bg6xb")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=929398161]
 position = Vector2(960, 540)
@@ -48,11 +140,16 @@ script = ExtResource("6_qtrhv")
 [node name="LevelManager" type="Node" parent="." unique_id=1836398542]
 script = ExtResource("7_o80qs")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1424524092]
+libraries/ = SubResource("AnimationLibrary_7a1mn")
+
 [connection signal="rating_end" from="Shelf" to="LevelManager" method="_on_shelf_rating_end"]
+[connection signal="level_end" from="Timer" to="." method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="Microwave" method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="Shelf" method="_on_timer_level_end"]
 [connection signal="level_start" from="Timer" to="Microwave" method="_on_timer_level_start"]
 [connection signal="level_start" from="Timer" to="Shelf" method="_on_timer_level_start"]
+[connection signal="level_prepare" from="LevelManager" to="." method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Shelf" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Timer" method="_on_level_manager_level_prepare"]

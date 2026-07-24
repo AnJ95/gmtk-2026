@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 			inner_root.get_child(i).position = calc_pos_at(i, current_runtime)
 
 
-func _on_level_manager_level_prepare(level: Level) -> void:
+func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	slot_num = level.num_microwave_slots
 	spawn_slots()
 	
