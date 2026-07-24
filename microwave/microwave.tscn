@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvu8nfw2wumbp" path="res://microwave/assets/microwave_door_half.png" id="4_7tji0"]
 [ext_resource type="Texture2D" uid="uid://u5svk13mc76l" path="res://microwave/assets/microwave_door_open.png" id="5_phvat"]
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="7_7tji0"]
-[ext_resource type="Shader" uid="uid://u3wsld03ygmu" path="res://noise.gdshader" id="7_phvat"]
+[ext_resource type="Shader" uid="uid://7yj68tgkahox" path="res://noise.gdshader" id="7_phvat"]
 
 [sub_resource type="Animation" id="Animation_041lo"]
 length = 0.001
@@ -140,7 +140,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
 size = Vector2(920, 549)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xidiv"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_phvat"]
 viewport_path = NodePath("Screen/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_64300"]
@@ -181,11 +181,10 @@ shape = SubResource("RectangleShape2D_6mv5x")
 metadata/_edit_lock_ = true
 
 [node name="Screen" type="Node2D" parent="." unique_id=169139386]
-visible = false
 script = ExtResource("2_phhhb")
 
 [node name="Polygon2D" type="Polygon2D" parent="Screen" unique_id=1187095861]
-texture = SubResource("ViewportTexture_xidiv")
+texture = SubResource("ViewportTexture_phvat")
 polygon = PackedVector2Array(-491, -350, -428, 88, 291, 79, 314, -367)
 uv = PackedVector2Array(0, 0, 0, 440, 810, 440, 810, 0)
 

@@ -42,7 +42,6 @@ func _animate_to(target_position: Vector2) -> void:
 	_tween = create_tween()
 	_tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 	_tween.tween_property(self, "position", target_position, tween_duration)
-	print(position, target_position, tween_duration)
 
 
 func _on_pressed() -> void:

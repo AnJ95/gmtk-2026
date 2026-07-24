@@ -65,8 +65,7 @@ func _on_mouse_hover_area_2d_mouse_exited() -> void:
 	set_open_state(false)
 
 func show_microwave_text(text: String) -> void:
-	screen.visible = true
 	screen.show_text(text)
 	
 func hide_microwave_text():
-	screen.visible = false
+	screen.hide_text()

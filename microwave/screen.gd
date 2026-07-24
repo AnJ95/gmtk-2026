@@ -16,3 +16,12 @@ func _ready():
 	
 func show_text(text: String):
 	$SubViewport/MarginContainer/RichTextLabel.text = text
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 1, 0.35)
+
+func hide_text():
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 0, 0.35)
+	
