@@ -44,4 +44,5 @@ func _on_button_continue_pressed() -> void:
 	start_level(current_level_id + 1)
 
 func _on_timer_level_end() -> void:
+	await get_tree().create_timer(2.0).timeout
 	rating_start.emit()
