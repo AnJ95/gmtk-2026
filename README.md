@@ -19,7 +19,6 @@ Microwave Madness? Ultrawave?
   - Tupperbox
   - Burger
   - Eisskulptur
-  - iPhone
   - Thermometer
   - Mikrowelle
   - Trauben
@@ -43,8 +42,8 @@ Microwave Madness? Ultrawave?
   - sollte nicht zu schräg sein, damit man die Eieruhr gut sehen kann
 - Grafik
   - Boden ändern?
-    - ich finde den Boden gerade zu dunkel / rot
+	- ich finde den Boden gerade zu dunkel / rot
   - Steckdose
   - Wand schmücken
   - Levelabhängige Themen für Hintergrund
-    - bspw. Rose fürs Date
+	- bspw. Rose fürs Date

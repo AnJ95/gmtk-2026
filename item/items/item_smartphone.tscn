@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://chyncua27je7t"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_43nxo"]
+[ext_resource type="Texture2D" uid="uid://bh4wrph8ueafq" path="res://item/items/assets/smartphone_raw.png" id="2_43nxo"]
+[ext_resource type="Texture2D" uid="uid://drd5ht1l430oh" path="res://item/items/assets/smartphone_done.png" id="3_4wa1e"]
+[ext_resource type="Texture2D" uid="uid://drmp4c7g8m56g" path="res://item/items/assets/smartphone_burned.png" id="4_yagfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(284, 201)
+
+[node name="ItemSmartphone" unique_id=1400601987 instance=ExtResource("1_43nxo")]
+item_name = "Smartphone"
+target = 15
+raw = ExtResource("2_43nxo")
+done = ExtResource("3_4wa1e")
+burnt = ExtResource("4_yagfk")
+particle_color = Color(0.6431373, 0.5294118, 0.44705883, 1)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -67)
+texture = ExtResource("2_43nxo")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -61.5)
+shape = SubResource("RectangleShape2D_22orn")
