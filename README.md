@@ -25,6 +25,8 @@ Microwave Madness? Ultrawave?
   - Trauben
   - Marshmellows
   - Kaba
+  - Eviction Notice
+    - Divorce
 - Random-Events
   - Steckdose
   - Power Surge -> macht, dass Mikrowelle schneller dreht
@@ -41,3 +43,4 @@ Microwave Madness? Ultrawave?
   - Boden ändern?
   - Steckdose
   - Wand schmücken
+  - Levelabhängige Themen für Hintergrund
