@@ -4,16 +4,6 @@ Microwave Madness? Ultrawave?
 
 ## TO DO
 
-- Bewertungssystem
-  - Punkteanzeige
-	  - Kochmütze
-  - mit Stempeln usw
-  - Kategorien
-	  - Rare
-	  - Raw
-	  - Perfect
-	  - Well Done
-	  - Burnt
 - Mehr Items
   - Polkappen
   - Tupperbox
@@ -34,15 +24,11 @@ Microwave Madness? Ultrawave?
 - Sounds
   - Tür (auf / zu)
   - Greifen / Ablegen
-  - Musik
-  - Stempel
 - Tutorial / How To Play
   - vielleicht einfach im Hauptmenü als Text?
 - Mauscursor
   - sollte nicht zu schräg sein, damit man die Eieruhr gut sehen kann
 - Grafik
-  - Boden ändern?
-	  - ich finde den Boden gerade zu dunkel / rot
   - Steckdose
   - Wand schmücken
   - Levelabhängige Themen für Hintergrund
