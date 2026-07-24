@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvu8nfw2wumbp" path="res://microwave/assets/microwave_door_half.png" id="4_7tji0"]
 [ext_resource type="Texture2D" uid="uid://u5svk13mc76l" path="res://microwave/assets/microwave_door_open.png" id="5_phvat"]
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="7_7tji0"]
+[ext_resource type="Shader" uid="uid://u3wsld03ygmu" path="res://noise.gdshader" id="7_phvat"]
 
 [sub_resource type="Animation" id="Animation_041lo"]
 length = 0.001
@@ -139,8 +140,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mv5x"]
 size = Vector2(920, 549)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_phhhb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xidiv"]
 viewport_path = NodePath("Screen/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_64300"]
+shader = ExtResource("7_phvat")
 
 [node name="Microwave" type="Node2D" unique_id=379186637]
 script = ExtResource("1_je6bm")
@@ -181,7 +185,7 @@ visible = false
 script = ExtResource("2_phhhb")
 
 [node name="Polygon2D" type="Polygon2D" parent="Screen" unique_id=1187095861]
-texture = SubResource("ViewportTexture_phhhb")
+texture = SubResource("ViewportTexture_xidiv")
 polygon = PackedVector2Array(-491, -350, -428, 88, 291, 79, 314, -367)
 uv = PackedVector2Array(0, 0, 0, 440, 810, 440, 810, 0)
 
@@ -189,9 +193,9 @@ uv = PackedVector2Array(0, 0, 0, 440, 810, 440, 810, 0)
 size = Vector2i(810, 440)
 
 [node name="TextureRect" type="ColorRect" parent="Screen/SubViewport" unique_id=568359717]
+material = SubResource("ShaderMaterial_64300")
 offset_right = 810.0
 offset_bottom = 440.0
-color = Color(0.37981048, 0.37981054, 0.37981048, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Screen/SubViewport" unique_id=2057436224]
 offset_right = 810.0
@@ -203,12 +207,13 @@ theme_override_constants/margin_bottom = 10
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/SubViewport/MarginContainer" unique_id=669476208]
 layout_mode = 2
+theme_override_constants/outline_size = 12
 theme_override_fonts/normal_font = ExtResource("7_7tji0")
 theme_override_fonts/bold_font = ExtResource("7_7tji0")
 theme_override_fonts/italics_font = ExtResource("7_7tji0")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 29
-theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/italics_font_size = 30
 bbcode_enabled = true
 text = "[b]Lorem ipsum dolor sit amet[/b]
 
