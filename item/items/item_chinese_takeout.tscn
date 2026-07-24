@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dev4w10jxq5yh"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_ndtq1"]
+[ext_resource type="Texture2D" uid="uid://qh3goc51vd08" path="res://item/items/assets/chinese_takeout_raw.png" id="2_ndtq1"]
+[ext_resource type="Texture2D" uid="uid://bp6glumgw7ys5" path="res://item/items/assets/chinese_takeout_done.png" id="3_2qett"]
+[ext_resource type="Texture2D" uid="uid://c60hkyp58jv8i" path="res://item/items/assets/chinese_takeout_burnt.png" id="4_lfbcd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(238, 222)
+
+[node name="ItemChineseTakeout" unique_id=1400601987 instance=ExtResource("1_ndtq1")]
+item_name = "Chinese Takeout"
+target = 25
+raw = ExtResource("2_ndtq1")
+done = ExtResource("3_2qett")
+burnt = ExtResource("4_lfbcd")
+particle_color = Color(0.7019608, 0.43529412, 0.101960786, 1)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -92)
+texture = ExtResource("2_ndtq1")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -76)
+shape = SubResource("RectangleShape2D_22orn")

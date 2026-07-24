@@ -10,6 +10,7 @@ size = Vector2(88, 266)
 
 [node name="ItemWineBottle" unique_id=1400601987 instance=ExtResource("1_r684h")]
 item_name = "Wine"
+target = 10
 raw = ExtResource("2_22orn")
 done = ExtResource("3_q7kl5")
 burnt = ExtResource("4_2qcr5")
