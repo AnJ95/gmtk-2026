@@ -34,6 +34,5 @@ func _process(delta: float) -> void:
 		$music_test.stop()
 		$AnimationPlayer.play("ring")
 
-
 func _on_level_manager_level_start(level: Level) -> void:
 	set_timer(level.total_time)
