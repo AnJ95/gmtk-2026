@@ -23,5 +23,4 @@ func move_item_back_to_shelf():
 	current_item.get_node("Draggable").drag_drop($Droppable)
 
 func show_rating():
-	print("Rating ", current_item.item_name) # TODO
 	current_item.show_rating()
