@@ -1,6 +1,9 @@
 extends Node2D
 class_name DragManager
 
+signal drag_start()
+signal drag_end()
+
 @export var draggable_mask: int = 1 << 4
 @export var is_active := true : set = _set_is_active
 
@@ -13,11 +16,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			if active_draggable:
 				active_draggable.drag_start()
 				get_viewport().set_input_as_handled()
+				drag_start.emit()
 		else:
 			if active_draggable:
 				active_draggable.drag_end()
 				active_draggable = null
 				get_viewport().set_input_as_handled()
+				drag_end.emit()
 
 func pick_top_draggable(pos: Vector2) -> Draggable:
 	var space := get_world_2d().direct_space_state

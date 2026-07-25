@@ -29,8 +29,6 @@ Microwave Everything All At Once
   - Greifen / Ablegen
 - Tutorial / How To Play
   - vielleicht einfach im Hauptmenü als Text?
-- Mauscursor
-  - sollte nicht zu schräg sein, damit man die Eieruhr gut sehen kann
 - Animation bei Point Gain
 - Grafik
   - Steckdose
