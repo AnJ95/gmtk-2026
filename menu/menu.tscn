@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://cmwd1olpk47n7" path="res://ui/theme/theme.tres" id="1_j0t7f"]
 [ext_resource type="Script" uid="uid://dnd1gg4har1m0" path="res://menu/menu.gd" id="2_g18jx"]
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="3_pbjm4"]
+[ext_resource type="Texture2D" uid="uid://30tok6ou5py6" path="res://menu/assets/microwave.png" id="3_svuvw"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="4_svuvw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_juveg"]
@@ -18,44 +19,14 @@ grow_vertical = 2
 theme = ExtResource("1_j0t7f")
 script = ExtResource("2_g18jx")
 
-[node name="start" type="Button" parent="." unique_id=1894758661]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 69.0
-offset_right = 293.0
-offset_bottom = 147.0
-text = "Start Game"
-
-[node name="howto" type="Button" parent="." unique_id=414962811]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 206.0
-offset_right = 308.0
-offset_bottom = 284.0
-text = "How to Play"
-
-[node name="credits" type="Button" parent="." unique_id=751610740]
-layout_mode = 0
-offset_left = 84.0
-offset_top = 345.0
-offset_right = 256.0
-offset_bottom = 423.0
-text = "Credits"
-
-[node name="quit" type="Button" parent="." unique_id=537575650]
-layout_mode = 0
-offset_left = 63.0
-offset_top = 462.0
-offset_right = 278.0
-offset_bottom = 540.0
-text = "Quit Game"
-
 [node name="space" type="TextureRect" parent="." unique_id=2037215049]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="microwave" type="Sprite2D" parent="." unique_id=1616383293]
+position = Vector2(995, 546)
+texture = ExtResource("3_svuvw")
 
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=286449441]
 follow_viewport_enabled = true
@@ -71,7 +42,31 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_svuvw")
 
-[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="howto" to="." method="_on_howto_pressed"]
-[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=513579909]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 322.0
+offset_bottom = 472.0
+theme_override_constants/separation = 32
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1894758661]
+layout_mode = 2
+text = "Start Game"
+
+[node name="howto" type="Button" parent="VBoxContainer" unique_id=414962811]
+layout_mode = 2
+text = "How to Play"
+
+[node name="credits" type="Button" parent="VBoxContainer" unique_id=751610740]
+layout_mode = 2
+text = "Credits"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=537575650]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/howto" to="." method="_on_howto_pressed"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
