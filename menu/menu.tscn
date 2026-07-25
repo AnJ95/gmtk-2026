@@ -66,6 +66,8 @@ text = "Credits"
 layout_mode = 2
 text = "Quit Game"
 
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=704458447]
+
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/howto" to="." method="_on_howto_pressed"]
 [connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
