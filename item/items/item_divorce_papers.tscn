@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cu8sqgt0vmygo"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_c1tkp"]
+[ext_resource type="Texture2D" uid="uid://cwh58kafgen54" path="res://item/items/assets/divorce_papers_raw.png" id="2_c1tkp"]
+[ext_resource type="Texture2D" uid="uid://bwj8kpmr0ojct" path="res://item/items/assets/divorce_papers_done.png" id="3_6kjdp"]
+[ext_resource type="Texture2D" uid="uid://duseark4f1p0k" path="res://item/items/assets/divorce_papers_burnt.png" id="4_xfb3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(264, 295)
+
+[node name="ItemDivorcePapers" unique_id=1400601987 instance=ExtResource("1_c1tkp")]
+item_name = "Divorce Papers"
+target = 40
+raw = ExtResource("2_c1tkp")
+done = ExtResource("3_6kjdp")
+burnt = ExtResource("4_xfb3r")
+particle_color = Color(1, 1, 1, 1)
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -68)
+texture = ExtResource("2_c1tkp")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -72.5)
+shape = SubResource("RectangleShape2D_22orn")
