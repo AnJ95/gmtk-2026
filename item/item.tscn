@@ -36,7 +36,7 @@ turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_6t40p"]
 offsets = PackedFloat32Array(0.7409639, 0.8192771)
-colors = PackedColorArray(0.8352941, 0.827451, 0.827451, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0.5176471, 0.45490196, 0.21960784, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6t40p"]
 gradient = SubResource("Gradient_6t40p")

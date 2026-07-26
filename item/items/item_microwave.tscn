@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://e5mbdqaht8xr"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_fpk5d"]
+[ext_resource type="Texture2D" uid="uid://c2mf0dgdvilyo" path="res://item/items/assets/microwave_raw.png" id="2_fpk5d"]
+[ext_resource type="Texture2D" uid="uid://5rfljug4dvkb" path="res://item/items/assets/microwave_done.png" id="3_cxi3g"]
+[ext_resource type="Texture2D" uid="uid://geje4iyu4tk4" path="res://item/items/assets/microwave_burnt.png" id="4_egfix"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(235, 197)
+
+[node name="ItemMicrowave" unique_id=1400601987 instance=ExtResource("1_fpk5d")]
+item_name = "Microwave"
+target = 60
+raw = ExtResource("2_fpk5d")
+done = ExtResource("3_cxi3g")
+burnt = ExtResource("4_egfix")
+particle_color = Color(0.76862746, 0.69411767, 0.6156863, 1)
+floating = false
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -98)
+texture = ExtResource("2_fpk5d")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(2.5, -97.5)
+shape = SubResource("RectangleShape2D_22orn")

@@ -10,11 +10,12 @@ size = Vector2(238, 222)
 
 [node name="ItemChineseTakeout" unique_id=1400601987 instance=ExtResource("1_ndtq1")]
 item_name = "Chinese Takeout"
-target = 25
+target = 10
 raw = ExtResource("2_ndtq1")
 done = ExtResource("3_2qett")
 burnt = ExtResource("4_lfbcd")
 particle_color = Color(0.7019608, 0.43529412, 0.101960786, 1)
+floating = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
 position = Vector2(0, -92)

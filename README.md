@@ -20,15 +20,16 @@ Microwave Everything All At Once
 - Level - Schwurbler
   - [ ] Eviction Notice
   - [x] Smartphone
-  - [ ] Mikrowelle
+  - [x] Mikrowelle
+  - [ ] Aluhut
 - Level - Sonnensystem
-  - [ ] Merkur
-  - [ ] Venus
-  - [ ] Erde
-  - [ ] Mars
-  - [ ] Jupiter
-  - [ ] Saturn
-  - [ ] Uranus
+  - [x] Merkur
+  - [x] Venus
+  - [x] Erde
+  - [x] Mars
+  - [x] Jupiter
+  - [x] Saturn
+  - [x] Uranus
 - Level - Chef of the Universe itself
   - [ ] Universe
 
