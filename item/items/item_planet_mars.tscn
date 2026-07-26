@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://ckqvy6qycm3ku"]
 
 [ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_ff30l"]
-[ext_resource type="Texture2D" uid="uid://b87kmfe06sxd5" path="res://item/items/assets/jupiter_raw.png" id="2_u3qcm"]
-[ext_resource type="Texture2D" uid="uid://d26u2nrsue433" path="res://item/items/assets/jupiter_done.png" id="3_3jhi5"]
-[ext_resource type="Texture2D" uid="uid://dpn511il8aqdc" path="res://item/items/assets/jupiter_burnt.png" id="4_4658x"]
+[ext_resource type="Texture2D" uid="uid://dx54gafammei0" path="res://item/items/assets/mars_raw.png" id="2_u3qcm"]
+[ext_resource type="Texture2D" uid="uid://rw2umgjxp4f5" path="res://item/items/assets/mars_done.png" id="3_3jhi5"]
+[ext_resource type="Texture2D" uid="uid://cfohk48ujbeie" path="res://item/items/assets/mars_burnt.png" id="4_4658x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
-size = Vector2(276, 275)
+size = Vector2(163, 157)
 
-[node name="ItemPlanetJupiter" unique_id=1400601987 instance=ExtResource("1_ff30l")]
+[node name="ItemPlanetMars" unique_id=1400601987 instance=ExtResource("1_ff30l")]
 item_name = "Mars"
 target = 25
 raw = ExtResource("2_u3qcm")
@@ -19,9 +19,9 @@ floating = true
 do_heat_death = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
-position = Vector2(0, -159)
+position = Vector2(0, -99)
 texture = ExtResource("2_u3qcm")
 
 [node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
-position = Vector2(0, -159.5)
+position = Vector2(-0.5, -100.5)
 shape = SubResource("RectangleShape2D_22orn")

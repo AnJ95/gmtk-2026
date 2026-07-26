@@ -23,5 +23,5 @@ position = Vector2(0, -79)
 texture = ExtResource("2_4t61n")
 
 [node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
-position = Vector2(0, -72.5)
+position = Vector2(0, -83)
 shape = SubResource("RectangleShape2D_22orn")

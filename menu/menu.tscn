@@ -61,7 +61,11 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="Moveable/VBoxContainer/PanelContainer/VBoxContainer" unique_id=388183548]
 layout_mode = 2
 text = "Drag- & Drop the items into the microwave to heat them up.
-Make sure the items are only heated for the required time!"
+Make sure the items are only heated for the required time!
+
+The microwave timer is broken, so you have the use the egg timer.
+
+You'll get score depending on your timings."
 
 [node name="PanelContainer2" type="PanelContainer" parent="Moveable/VBoxContainer" unique_id=863486373]
 custom_minimum_size = Vector2(0, 1080)
@@ -80,7 +84,7 @@ horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=871152220]
 layout_mode = 2
-text = "Created during the Game Makers Toolkit Game Jam"
+text = "Created during the Game Makers Toolkit Game Jam 2026"
 
 [node name="Label2" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1983671033]
 layout_mode = 2
@@ -89,8 +93,9 @@ text = "Made with the Godot Game Engine <3"
 [node name="Label3" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=267052674]
 layout_mode = 2
 text = "Used tools:
-* Adobe Photoshop
-* Renoise"
+* Godot
+* Renoise
+* Adobe Photoshop"
 
 [node name="Label4" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=572890939]
 custom_minimum_size = Vector2(10, 0)
@@ -101,9 +106,16 @@ autowrap_mode = 3
 [node name="Label6" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=714106039]
 layout_mode = 2
 text = "Special thanks to:
-Godot
-Mark Brown
-Mozart"
+* Godot
+* Mark Brown
+* Mozart"
+
+[node name="Label7" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=384494921]
+layout_mode = 2
+text = "Music:
+* Music (bummelzug)
+* Lacrimosa (Wolfgang Amadeus Mozart)
+* Space (bummelzug)"
 
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=286449441]
 follow_viewport_enabled = true

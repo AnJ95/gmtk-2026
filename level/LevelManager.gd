@@ -8,7 +8,7 @@ signal level_prepare(level_id: int, level: Level)
 signal level_start(level_id: int, level: Level)
 signal rating_start()
 
-@export var first_level_id = 0
+@export var first_level_id = 4
 
 var levels := [
 	Level.new(30, 3, MUSIC_TITLE, [
