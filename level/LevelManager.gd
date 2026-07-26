@@ -8,38 +8,40 @@ signal level_prepare(level_id: int, level: Level)
 signal level_start(level_id: int, level: Level)
 signal rating_start()
 
-@export var first_level_id = 5
+@export var first_level_id = 0
 
 var levels := [
-	Level.new(10, 3, MUSIC_TITLE, [
+	Level.new(30, 3, MUSIC_TITLE, [
 		preload("res://item/items/item_wine_bottle.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
 		preload("res://item/items/item_pizza.tscn"),
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]First Date at my place![/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
-	Level.new(45, 3, MUSIC_TITLE, [
+"),
+	Level.new(25, 3, MUSIC_TITLE, [
 		preload("res://item/items/item_egg.tscn"),
+		preload("res://item/items/item_egg.tscn"),
+		preload("res://item/items/item_kaba.tscn"),
 		preload("res://item/items/item_kaba.tscn")
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]5 years later...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
 	Level.new(40, 2, MUSIC_LACRIMOSA, [
 		preload("res://item/items/item_chinese_takeout.tscn"),
 		preload("res://item/items/item_chinese_takeout.tscn"),
 		preload("res://item/items/item_chinese_takeout.tscn"),
 		preload("res://item/items/item_divorce_papers.tscn"),
 		
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]2 years later...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
 	Level.new(60, 2, MUSIC_LACRIMOSA, [
 		preload("res://item/items/item_smartphone.tscn"),
 		preload("res://item/items/item_microwave.tscn"),
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]Soon after...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
-	Level.new(60, 4, MUSIC_SPACE, [
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+	Level.new(60, 3, MUSIC_SPACE, [
 		preload("res://item/items/item_planet_mercury.tscn"),
 		preload("res://item/items/item_planet_venus.tscn"),
 		preload("res://item/items/item_planet_earth.tscn"),
@@ -48,14 +50,13 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 		preload("res://item/items/item_planet_saturn.tscn"),
 		preload("res://item/items/item_planet_uranus.tscn"),
 		preload("res://item/items/item_planet_neptune.tscn"),
-		
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]Planetary ascension[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
 	Level.new(30, 1, MUSIC_SPACE, [
 		preload("res://item/items/item_universe.tscn"),
 		
-	], "[b]Lorem ipsum dolor sit amet[/b]
+	], "[b]The chef of the entire Universe[/b]
 
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
 ]

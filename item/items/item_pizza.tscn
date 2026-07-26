@@ -8,12 +8,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
 size = Vector2(294, 171)
 
-[node name="ItemWineBottle" unique_id=1400601987 instance=ExtResource("1_5ati2")]
+[node name="ItemPizza" unique_id=1400601987 instance=ExtResource("1_5ati2")]
 item_name = "Pizza"
 raw = ExtResource("2_5ati2")
 done = ExtResource("3_e0xte")
 burnt = ExtResource("4_hup40")
-particle_color = Color(0.49803922, 0.09411765, 0.17254902, 0.8117647)
+particle_color = Color(0.74824655, 0.5706944, 0.23982832, 1)
+floating = false
+do_heat_death = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
 position = Vector2(0, -50)

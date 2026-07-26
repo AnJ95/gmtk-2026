@@ -136,7 +136,6 @@ floating = null
 do_heat_death = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=157243693]
-scale = Vector2(0.5, 0.5)
 
 [node name="Draggable" parent="." unique_id=1495946638 node_paths=PackedStringArray("root") instance=ExtResource("2_6t40p")]
 root = NodePath("..")
