@@ -68,7 +68,12 @@ Now, it is the solar system that will be microwaved."),
 		
 	], "[b]The chef of the Universe[/b]
 
-...")
+This is the final countdown.
+You have become bored of your solemn existence.
+Eveything around you was exposed to electromagnetic radiation.
+Nothing remains.
+As you contemplate your actions, you realize there is onl one thing left to do.
+So you take the universe and put it on your plate.")
 ]
 
 var current_level_id = 0
