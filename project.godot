@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Microwave Everything All At Once"
-run/main_scene="uid://hp5bb5pnux7h"
+run/main_scene="uid://d37ly41v5tah3"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dkgm8huxbxens"
 

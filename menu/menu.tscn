@@ -5,6 +5,8 @@
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="3_pbjm4"]
 [ext_resource type="Texture2D" uid="uid://30tok6ou5py6" path="res://menu/assets/microwave.png" id="3_svuvw"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="4_svuvw"]
+[ext_resource type="AudioStream" uid="uid://b64jyyyf05ywr" path="res://music.wav" id="6_juveg"]
+[ext_resource type="PackedScene" uid="uid://4kk2mu62dfbu" path="res://ui/Cursor.tscn" id="7_v6yed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_juveg"]
 shader = ExtResource("3_pbjm4")
@@ -67,6 +69,11 @@ layout_mode = 2
 text = "Quit Game"
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=704458447]
+stream = ExtResource("6_juveg")
+volume_db = -6.0
+autoplay = true
+
+[node name="Cursor" parent="." unique_id=974189091 instance=ExtResource("7_v6yed")]
 
 [connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/howto" to="." method="_on_howto_pressed"]

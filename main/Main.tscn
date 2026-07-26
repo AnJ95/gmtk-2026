@@ -12,9 +12,7 @@
 [ext_resource type="FontFile" uid="uid://dnh0cy5qlqsi7" path="res://timer/Hack-Regular.ttf" id="10_7a1mn"]
 [ext_resource type="Texture2D" uid="uid://cuwc8gjy0mw1p" path="res://ui/point/assets/point_100.png" id="11_m4geg"]
 [ext_resource type="PackedScene" uid="uid://dff22pedg3npl" path="res://ui/HidingButton.tscn" id="12_50616"]
-[ext_resource type="Script" uid="uid://dr06eukf3uaje" path="res://ui/cursor/cursor.gd" id="13_jjrvb"]
-[ext_resource type="Texture2D" uid="uid://cnosc3goui3pf" path="res://ui/cursor/cursor_dragging.png" id="14_4w566"]
-[ext_resource type="Texture2D" uid="uid://d23uimgw1vspe" path="res://ui/cursor/cursor_pointer.png" id="14_jjrvb"]
+[ext_resource type="PackedScene" uid="uid://4kk2mu62dfbu" path="res://ui/Cursor.tscn" id="13_50616"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnyk"]
 shader = ExtResource("5_tv7ag")
@@ -225,16 +223,7 @@ text = "Continue"
 show_position = Vector2(1573, 400)
 hide_position = Vector2(2100, 400)
 
-[node name="Cursor" type="Node2D" parent="." unique_id=1326504499]
-script = ExtResource("13_jjrvb")
-
-[node name="CursorDragging" type="Sprite2D" parent="Cursor" unique_id=506071971]
-position = Vector2(46, 494)
-texture = ExtResource("14_4w566")
-
-[node name="CursorPoint" type="Sprite2D" parent="Cursor" unique_id=627302431]
-position = Vector2(109, 561)
-texture = ExtResource("14_jjrvb")
+[node name="Cursor" parent="." unique_id=974189091 instance=ExtResource("13_50616")]
 
 [node name="HeatDeath" type="ColorRect" parent="." unique_id=103474668]
 modulate = Color(1, 1, 1, 0)
@@ -252,8 +241,6 @@ libraries/ = SubResource("AnimationLibrary_samfq")
 [connection signal="level_end" from="Timer" to="Shelf" method="_on_timer_level_end"]
 [connection signal="level_end" from="Timer" to="LevelManager" method="_on_timer_level_end"]
 [connection signal="level_prepared" from="Timer" to="." method="_on_timer_level_prepared"]
-[connection signal="drag_end" from="DragManager" to="Cursor" method="_on_drag_manager_drag_end"]
-[connection signal="drag_start" from="DragManager" to="Cursor" method="_on_drag_manager_drag_start"]
 [connection signal="level_prepare" from="LevelManager" to="." method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Microwave" method="_on_level_manager_level_prepare"]
 [connection signal="level_prepare" from="LevelManager" to="Shelf" method="_on_level_manager_level_prepare"]
