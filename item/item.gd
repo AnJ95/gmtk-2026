@@ -13,6 +13,8 @@ extends Node2D
 @export var done: Texture2D
 @export var burnt: Texture2D
 @export var particle_color: Color
+@export_group("Effects")
+@export var floating := false
 @onready var sprite: Sprite2D = $Sprite2D
 
 const Stamp = preload("res://item/stamp/stamp.tscn")
@@ -35,6 +37,10 @@ func _ready() -> void:
 	_set_sprite_texture(raw)
 	$explosion.texture.gradient.set_color(0, particle_color)
 	main = get_tree().root.get_node("Main")
+	if floating:
+		$AnimationPlayer.play("float")
+		var length = $AnimationPlayer.get_animation("float").length
+		$AnimationPlayer.seek(randf_range(0.0, length), true)
 
 func _set_sprite_texture(texture: Texture2D) -> void:
 	var sprite_node := $Sprite2D as Sprite2D

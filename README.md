@@ -2,9 +2,40 @@
 
 Microwave Everything All At Once
 
+
+
+## Levels
+
+- Level - Romantic Dinner
+  - [x] Wine Bottle
+  - [x] Pizza
+  - [x] Pizza
+- Level - Happy Family Breakfast
+  - [x] Egg
+  - [x] Egg
+  - [x] Kaba
+- Level - Divorce
+  - [x] Scheidungspapiere
+  - [x] Chinese Takeout
+- Level - Schwurbler
+  - [ ] Eviction Notice
+  - [x] Smartphone
+  - [ ] Mikrowelle
+- Level - Sonnensystem
+  - [ ] Merkur
+  - [ ] Venus
+  - [ ] Erde
+  - [ ] Mars
+  - [ ] Jupiter
+  - [ ] Saturn
+  - [ ] Uranus
+- Level - Chef of the Universe itself
+  - [ ] Universe
+
+
 ## TO DO
 
-- Mehr Items
+- Item-Ideen
   - Polkappen
   - Tupperbox
   - Burger
@@ -14,9 +45,7 @@ Microwave Everything All At Once
   - Trauben
   - Marshmellows
   - Eviction Notice
-	- Divorce
   - Mais / Popcorn
-
 - Random-Events
   - Steckdose
   - Power Surge -> macht, dass Mikrowelle schneller dreht

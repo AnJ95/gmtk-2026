@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://did7c86fy8rd0"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_ff30l"]
+[ext_resource type="Texture2D" uid="uid://b6yp5hii6db8y" path="res://item/items/assets/earth_raw.png" id="2_ceakw"]
+[ext_resource type="Texture2D" uid="uid://byxkk2dnias2l" path="res://item/items/assets/earth_done.png" id="3_1rr23"]
+[ext_resource type="Texture2D" uid="uid://bvwr3r5g12l6c" path="res://item/items/assets/earth_burnt.png" id="4_ui7cf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(186, 184)
+
+[node name="ItemPlanetEarth" unique_id=1400601987 instance=ExtResource("1_ff30l")]
+item_name = "Earth"
+raw = ExtResource("2_ceakw")
+done = ExtResource("3_1rr23")
+burnt = ExtResource("4_ui7cf")
+particle_color = Color(0.19991079, 0.28206947, 0.72681916, 1)
+floating = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -115)
+texture = ExtResource("2_ceakw")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -116)
+shape = SubResource("RectangleShape2D_22orn")

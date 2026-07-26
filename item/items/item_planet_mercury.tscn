@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dhhwpe3v10qc4"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_ff30l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c6uey"]
+load_path = "res://.godot/imported/mercury_raw.png-eacce06f9dd65b0cb0a82f4be465edc8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tw1c7"]
+load_path = "res://.godot/imported/mercury_done.png-1792c293ba9339ca531bdb5440ff57c4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vmgxs"]
+load_path = "res://.godot/imported/mercury_burnt.png-aad6918fce75313a833e979100b03649.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(133, 131)
+
+[node name="ItemPlanetMercury" unique_id=1400601987 instance=ExtResource("1_ff30l")]
+item_name = "Mercury"
+raw = SubResource("CompressedTexture2D_c6uey")
+done = SubResource("CompressedTexture2D_tw1c7")
+burnt = SubResource("CompressedTexture2D_vmgxs")
+particle_color = Color(0.8352941, 0.827451, 0.827451, 1)
+floating = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -87)
+texture = SubResource("CompressedTexture2D_c6uey")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0.5, -88.5)
+shape = SubResource("RectangleShape2D_22orn")

@@ -36,7 +36,7 @@ turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_6t40p"]
 offsets = PackedFloat32Array(0.7409639, 0.8192771)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0.8352941, 0.827451, 0.827451, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6t40p"]
 gradient = SubResource("Gradient_6t40p")
@@ -63,8 +63,48 @@ scale_curve = SubResource("CurveTexture_jrfc1")
 hue_variation_min = -0.100000024
 hue_variation_max = 0.09999997
 
+[sub_resource type="Animation" id="Animation_6t40p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0yflk"]
+resource_name = "float"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:offset")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 8), Vector2(0, -8), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qlib2"]
+_data = {
+&"RESET": SubResource("Animation_6t40p"),
+&"float": SubResource("Animation_0yflk")
+}
+
 [node name="Item" type="Node2D" unique_id=1950998414]
 script = ExtResource("1_4ojsc")
+floating = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=157243693]
 
@@ -92,5 +132,8 @@ texture = SubResource("GradientTexture2D_6t40p")
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_erfwr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1055918633]
+libraries/ = SubResource("AnimationLibrary_qlib2")
 
 [connection signal="dropped" from="Draggable" to="." method="_on_draggable_dropped"]

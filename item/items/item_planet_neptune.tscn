@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bwgirrf6lxhhp"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_bukwr"]
+[ext_resource type="Texture2D" uid="uid://b56c5rxvoflkk" path="res://item/items/assets/neptune_raw.png" id="2_bukwr"]
+[ext_resource type="Texture2D" uid="uid://b0nb66vdrj45r" path="res://item/items/assets/neptune_done.png" id="3_jdygp"]
+[ext_resource type="Texture2D" uid="uid://dj1thxraawvp1" path="res://item/items/assets/neptune_burnt.png" id="4_vojl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(216, 222)
+
+[node name="ItemPlanetNeptune" unique_id=1400601987 instance=ExtResource("1_bukwr")]
+item_name = "Neptune"
+target = 20
+raw = ExtResource("2_bukwr")
+done = ExtResource("3_jdygp")
+burnt = ExtResource("4_vojl4")
+particle_color = Color(0.32156864, 0.5372549, 0.89411765, 1)
+floating = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -133)
+texture = ExtResource("2_bukwr")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -134)
+shape = SubResource("RectangleShape2D_22orn")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bgi05b1imdpg8"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_uiqc0"]
+[ext_resource type="Texture2D" uid="uid://bm0wihw2nlxvt" path="res://item/items/assets/uranus_raw.png" id="2_uiqc0"]
+[ext_resource type="Texture2D" uid="uid://hxp7ynwcqhbs" path="res://item/items/assets/uranus_done.png" id="3_uglac"]
+[ext_resource type="Texture2D" uid="uid://cu33q6fupm7hw" path="res://item/items/assets/uranus_burnt.png" id="4_qcwnu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(182, 186)
+
+[node name="ItemPlanetUranus" unique_id=1400601987 instance=ExtResource("1_uiqc0")]
+item_name = "Uranus"
+target = 25
+raw = ExtResource("2_uiqc0")
+done = ExtResource("3_uglac")
+burnt = ExtResource("4_qcwnu")
+particle_color = Color(0.27058825, 0.50980395, 0.627451, 1)
+floating = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -119)
+texture = ExtResource("2_uiqc0")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -117)
+shape = SubResource("RectangleShape2D_22orn")

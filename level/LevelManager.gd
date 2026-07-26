@@ -2,10 +2,13 @@ extends Node
 
 const MUSIC_TITLE = preload("res://music.wav")
 const MUSIC_LACRIMOSA = preload("res://lacrimosa.wav")
+const MUSIC_SPACE = preload("res://space.wav")
 
 signal level_prepare(level_id: int, level: Level)
 signal level_start(level_id: int, level: Level)
 signal rating_start()
+
+@export var first_level_id = 3
 
 var levels := [
 	Level.new(10, 3, MUSIC_TITLE, [
@@ -27,13 +30,26 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 		preload("res://item/items/item_smartphone.tscn"),
 	], "[b]Lorem ipsum dolor sit amet[/b]
 
+Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."),
+	Level.new(40, 4, MUSIC_SPACE, [
+		preload("res://item/items/item_planet_mercury.tscn"),
+		preload("res://item/items/item_planet_venus.tscn"),
+		preload("res://item/items/item_planet_earth.tscn"),
+		preload("res://item/items/item_planet_mars.tscn"),
+		preload("res://item/items/item_planet_jupiter.tscn"),
+		preload("res://item/items/item_planet_saturn.tscn"),
+		preload("res://item/items/item_planet_uranus.tscn"),
+		preload("res://item/items/item_planet_neptune.tscn"),
+		
+	], "[b]Lorem ipsum dolor sit amet[/b]
+
 Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
 ]
 
 var current_level_id = 0
 
 func _ready() -> void:
-	start_level(0)
+	start_level(first_level_id)
 	
 func start_level(level_id: int):
 	current_level_id = level_id
