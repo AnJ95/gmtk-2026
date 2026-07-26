@@ -43,7 +43,10 @@ Prepare breakfast for your family"),
 Unfortunately your luck has run out.
 Your wife is divorcing you and your are no longer allowed to see your children.
 The days pass by and the takeout boxes are starting to rise to a large tower."),
-	Level.new(60, 2, MUSIC_LACRIMOSA, [
+	Level.new(50, 3, MUSIC_LACRIMOSA, [
+		preload("res://item/items/item_aluhat.tscn"),
+		preload("res://item/items/item_aluhat.tscn"),
+		preload("res://item/items/item_aluhat.tscn"),
 		preload("res://item/items/item_smartphone.tscn"),
 		preload("res://item/items/item_microwave.tscn"),
 	], "[b]Soon after...[/b]
@@ -69,10 +72,9 @@ Now, it is the solar system that will be microwaved."),
 	], "[b]The chef of the Universe[/b]
 
 This is the final countdown. You have become bored of your solemn existence.
-Eveything around you was exposed to electromagnetic radiation.
+Everything around you was exposed to electromagnetic radiation.
 Nothing remains.
-As you contemplate your actions, you realize there is only one thing left to do.
-So you take the universe itself and put it on your plate.")
+As you contemplate your actions, you realize there is only one thing left to do...")
 ]
 
 var current_level_id = 0
