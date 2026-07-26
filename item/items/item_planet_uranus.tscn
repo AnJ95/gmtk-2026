@@ -10,12 +10,13 @@ size = Vector2(182, 186)
 
 [node name="ItemPlanetUranus" unique_id=1400601987 instance=ExtResource("1_uiqc0")]
 item_name = "Uranus"
-target = 25
+target = 15
 raw = ExtResource("2_uiqc0")
 done = ExtResource("3_uglac")
 burnt = ExtResource("4_qcwnu")
 particle_color = Color(0.27058825, 0.50980395, 0.627451, 1)
 floating = true
+do_heat_death = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
 position = Vector2(0, -119)

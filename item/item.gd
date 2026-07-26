@@ -84,7 +84,7 @@ func _process(delta: float) -> void:
 		state = States.DONE
 		sprite.texture = done
 		$explosion.emitting = true
-		if heat_death:
+		if do_heat_death:
 			play_animation_heat_death()
 	elif state == States.DONE and time > target + RADIUS_OKAY:
 		state = States.BURNT

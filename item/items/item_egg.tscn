@@ -15,6 +15,8 @@ raw = ExtResource("2_cl7qx")
 done = ExtResource("3_rk0os")
 burnt = ExtResource("4_y3ap8")
 particle_color = Color(0.5176471, 0.45490196, 0.21960784, 1)
+floating = false
+do_heat_death = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
 position = Vector2(0, -29)

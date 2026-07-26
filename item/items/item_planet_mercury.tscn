@@ -16,11 +16,13 @@ size = Vector2(133, 131)
 
 [node name="ItemPlanetMercury" unique_id=1400601987 instance=ExtResource("1_ff30l")]
 item_name = "Mercury"
+target = 20
 raw = SubResource("CompressedTexture2D_c6uey")
 done = SubResource("CompressedTexture2D_tw1c7")
 burnt = SubResource("CompressedTexture2D_vmgxs")
 particle_color = Color(0.8352941, 0.827451, 0.827451, 1)
 floating = true
+do_heat_death = false
 
 [node name="Sprite2D" parent="." index="0" unique_id=157243693]
 position = Vector2(0, -87)

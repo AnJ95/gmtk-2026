@@ -17,8 +17,10 @@ var levels := [
 		preload("res://item/items/item_pizza.tscn"),
 	], "[b]First Date at my place![/b]
 
-"),
-	Level.new(25, 3, MUSIC_TITLE, [
+Damn it, I don't think I have a wine opener"),
+	Level.new(30, 3, MUSIC_TITLE, [
+		preload("res://item/items/item_egg.tscn"),
+		preload("res://item/items/item_egg.tscn"),
 		preload("res://item/items/item_egg.tscn"),
 		preload("res://item/items/item_egg.tscn"),
 		preload("res://item/items/item_kaba.tscn"),
