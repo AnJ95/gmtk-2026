@@ -8,7 +8,7 @@ signal level_prepare(level_id: int, level: Level)
 signal level_start(level_id: int, level: Level)
 signal rating_start()
 
-@export var first_level_id = 4
+@export var first_level_id = 0
 
 var levels := [
 	Level.new(30, 3, MUSIC_TITLE, [
@@ -17,7 +17,10 @@ var levels := [
 		preload("res://item/items/item_pizza.tscn"),
 	], "[b]First Date at my place![/b]
 
-Damn it, I don't think I have a wine opener"),
+A romance is blooming... your crush is coming over to your place for a romatic dinner.
+Prepare two pizzas and a bottle of wine for the date.
+
+Damn it, you don't have a wine opener!"),
 	Level.new(30, 3, MUSIC_TITLE, [
 		preload("res://item/items/item_egg.tscn"),
 		preload("res://item/items/item_egg.tscn"),
@@ -27,7 +30,8 @@ Damn it, I don't think I have a wine opener"),
 		preload("res://item/items/item_kaba.tscn")
 	], "[b]5 years later...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+Your love has grown and you have two beautiful children.
+Prepare breakfast for your family"),
 	Level.new(40, 2, MUSIC_LACRIMOSA, [
 		preload("res://item/items/item_chinese_takeout.tscn"),
 		preload("res://item/items/item_chinese_takeout.tscn"),
@@ -36,13 +40,16 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 		
 	], "[b]2 years later...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+Unfortunately your luck has run out.
+Your wife is divorcing you and your are no longer allowed to see your children.
+The days pass by and the takeout boxes are starting to rise to a large tower."),
 	Level.new(60, 2, MUSIC_LACRIMOSA, [
 		preload("res://item/items/item_smartphone.tscn"),
 		preload("res://item/items/item_microwave.tscn"),
 	], "[b]Soon after...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+You found the answers that you were looking for.
+Everything around you finally makes sense."),
 	Level.new(60, 3, MUSIC_SPACE, [
 		preload("res://item/items/item_planet_mercury.tscn"),
 		preload("res://item/items/item_planet_venus.tscn"),
@@ -52,15 +59,16 @@ Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
 		preload("res://item/items/item_planet_saturn.tscn"),
 		preload("res://item/items/item_planet_uranus.tscn"),
 		preload("res://item/items/item_planet_neptune.tscn"),
-	], "[b]Planetary ascension[/b]
+	], "[b]Soon after...[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum."),
+You have transcended your mortal existence and your microwave has guided you through the process.
+Now, it is the solar system that will be microwaved."),
 	Level.new(30, 1, MUSIC_SPACE, [
 		preload("res://item/items/item_universe.tscn"),
 		
-	], "[b]The chef of the entire Universe[/b]
+	], "[b]The chef of the Universe[/b]
 
-Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. [i]At vero eos[/i] et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.")
+...")
 ]
 
 var current_level_id = 0
