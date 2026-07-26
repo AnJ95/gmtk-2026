@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bvr4ou4duwupl"]
+
+[ext_resource type="PackedScene" uid="uid://c46yx6w6qiej" path="res://item/item.tscn" id="1_j3crd"]
+[ext_resource type="Texture2D" uid="uid://bxd0u7mqryrtf" path="res://item/items/assets/universe.png" id="2_lmh5v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22orn"]
+size = Vector2(200, 197)
+
+[node name="ItemUniverse" unique_id=1400601987 instance=ExtResource("1_j3crd")]
+item_name = "The Universe"
+target = 10
+raw = ExtResource("2_lmh5v")
+done = ExtResource("2_lmh5v")
+burnt = ExtResource("2_lmh5v")
+particle_color = Color(0.5808179, 0.7301856, 0.8368765, 1)
+floating = true
+do_heat_death = true
+
+[node name="Sprite2D" parent="." index="0" unique_id=157243693]
+position = Vector2(0, -114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lmh5v")
+
+[node name="CollisionShape2D" parent="Draggable" parent_id_path=PackedInt32Array(1495946638) index="0" unique_id=342224994]
+position = Vector2(0, -113.5)
+shape = SubResource("RectangleShape2D_22orn")

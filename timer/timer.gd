@@ -44,3 +44,9 @@ func _on_level_manager_level_start(level_id: int, level: Level) -> void:
 	is_counting = true
 	$music_test.stream = level.music
 	$music_test.play()
+
+func fade_out_music():
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tween.tween_property($music_test, "volume_db", -80.0, 10)
+	$music_test.stop()

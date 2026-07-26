@@ -115,6 +115,42 @@ font_size = 64
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_4w566"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_wf831"]
+resource_name = "heat_death"
+length = 10.0
+step = 1.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -1.6444445, 0, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_samfq"]
+_data = {
+&"RESET": SubResource("Animation_4w566"),
+&"heat_death": SubResource("Animation_wf831")
+}
+
 [node name="Main" type="Node2D" unique_id=1186793701]
 script = ExtResource("1_bg6xb")
 
@@ -199,6 +235,16 @@ texture = ExtResource("14_4w566")
 [node name="CursorPoint" type="Sprite2D" parent="Cursor" unique_id=627302431]
 position = Vector2(109, 561)
 texture = ExtResource("14_jjrvb")
+
+[node name="HeatDeath" type="ColorRect" parent="." unique_id=103474668]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HeatDeath" unique_id=1753491501]
+libraries/ = SubResource("AnimationLibrary_samfq")
 
 [connection signal="rating_end" from="Shelf" to="." method="_on_shelf_rating_end"]
 [connection signal="level_end" from="Timer" to="." method="_on_timer_level_end"]

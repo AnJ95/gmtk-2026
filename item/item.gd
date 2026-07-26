@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+signal heat_death
+
 @export var item_name: String = ""
 @export_group("Time")
 @export var target: int = 30
@@ -15,6 +17,8 @@ extends Node2D
 @export var particle_color: Color
 @export_group("Effects")
 @export var floating := false
+@export var do_heat_death := false
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 const Stamp = preload("res://item/stamp/stamp.tscn")
@@ -80,6 +84,8 @@ func _process(delta: float) -> void:
 		state = States.DONE
 		sprite.texture = done
 		$explosion.emitting = true
+		if heat_death:
+			play_animation_heat_death()
 	elif state == States.DONE and time > target + RADIUS_OKAY:
 		state = States.BURNT
 		sprite.texture = burnt
@@ -94,3 +100,9 @@ func _on_draggable_dropped(droppable: Droppable) -> void:
 
 func set_draggable(draggable: bool):
 	$Draggable.set_enabled(draggable)
+
+func play_animation_heat_death():
+	$AnimationPlayer.play("heat_death")
+	heat_death.emit()
+	await $AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://menu/menu.tscn")

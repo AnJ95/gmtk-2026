@@ -16,7 +16,7 @@ func spawn_slots(items: Array[PackedScene]) -> void:
 
 	for i in range(items.size()):
 		var instance := Slot.instantiate() as Node2D
-		instance.position = end_position * (i / float(items.size()))
+		instance.position = get_pos_for_slot(i, items.size())
 		instance.item_scene = items[i]
 		root.add_child(instance)
 		instance.call_deferred("set_active", false)
@@ -24,7 +24,12 @@ func spawn_slots(items: Array[PackedScene]) -> void:
 func update_slot_positions() -> void:
 	if root != null:
 		for i in range(root.get_child_count()):
-			root.get_child(i).position = end_position * (i / float(root.get_child_count()))
+			root.get_child(i).position = get_pos_for_slot(i, root.get_child_count())
+
+func get_pos_for_slot(i: int, n: int):
+	if n == 1:
+		return end_position / 2.0
+	return end_position * (i / float(n))
 
 func _on_level_manager_level_prepare(_level_id: int, level: Level) -> void:
 	spawn_slots(level.shelf_items)

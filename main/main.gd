@@ -20,5 +20,12 @@ func _on_shelf_rating_end() -> void:
 func _process(delta: float) -> void:
 	$points.text = str(points)
 
+func _on_death_death():
+	$HeatDeath/AnimationPlayer.play("heat_death")
+	$Timer.fade_out_music()
+	$Microwave.is_running = false
+	await $HeatDeath/AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://menu/menu.tscn")
+	
 func score(p: int):
 	points += p

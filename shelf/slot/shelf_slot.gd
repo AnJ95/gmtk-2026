@@ -9,9 +9,11 @@ func _ready() -> void:
 	current_item = item_scene.instantiate() as Node2D
 	add_child(current_item)
 	current_item.get_node("Draggable").drag_drop($Droppable)
-	
 	$VBoxContainer/LabelItemName.text = current_item.item_name
 	$VBoxContainer/LabelItemTime.text = "%ds" % current_item.target
+	
+	
+	current_item.heat_death.connect(get_parent().get_parent()._on_death_death)
 
 func can_accept_draggable(draggable: Draggable) -> bool:
 	return draggable.root == current_item

@@ -27,6 +27,8 @@ func spawn_slots() -> void:
 		inner_root.add_child(instance)
 
 func calc_pos_at(i: int, time: float):
+	if slot_num == 1:
+		return Vector2.ZERO
 	var angle_step := TAU / slot_num
 	return Vector2.from_angle(angle_step * i + time * slot_rotation_speed) * slot_radius
 

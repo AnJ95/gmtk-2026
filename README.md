@@ -31,7 +31,7 @@ Microwave Everything All At Once
   - [x] Saturn
   - [x] Uranus
 - Level - Chef of the Universe itself
-  - [ ] Universe
+  - [x] Universe
 
 
 ## TO DO

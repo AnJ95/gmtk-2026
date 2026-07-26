@@ -36,7 +36,7 @@ turbulence_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_6t40p"]
 offsets = PackedFloat32Array(0.7409639, 0.8192771)
-colors = PackedColorArray(0.5176471, 0.45490196, 0.21960784, 1, 0, 0, 0, 0)
+colors = PackedColorArray(0.5808179, 0.7301856, 0.8368765, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6t40p"]
 gradient = SubResource("Gradient_6t40p")
@@ -96,17 +96,47 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, 8), Vector2(0, -8), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_qlib2"]
+resource_name = "heat_death"
+length = 10.0
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 20, -1.6666667, -16.5, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0.5, -0.25, 0, 0.25, 0, 20, -1.667, -16.5, 0, 0),
+"times": PackedFloat32Array(0, 10)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qlib2"]
 _data = {
 &"RESET": SubResource("Animation_6t40p"),
-&"float": SubResource("Animation_0yflk")
+&"float": SubResource("Animation_0yflk"),
+&"heat_death": SubResource("Animation_qlib2")
 }
 
 [node name="Item" type="Node2D" unique_id=1950998414]
 script = ExtResource("1_4ojsc")
 floating = null
+do_heat_death = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=157243693]
+scale = Vector2(0.5, 0.5)
 
 [node name="Draggable" parent="." unique_id=1495946638 node_paths=PackedStringArray("root") instance=ExtResource("2_6t40p")]
 root = NodePath("..")
