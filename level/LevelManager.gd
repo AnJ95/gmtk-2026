@@ -48,8 +48,7 @@ The days pass by and the takeout boxes are starting to rise to a large tower."),
 		preload("res://item/items/item_microwave.tscn"),
 	], "[b]Soon after...[/b]
 
-You found the answers that you were looking for.
-Everything around you finally makes sense."),
+Life is hard but you are beginning to see the truths behind everything. You are asking questions that need not be asked. People around you don't understand but that won't stop you. It's cold outside so you need to warm up your hat and your phone needs charging."),
 	Level.new(60, 3, MUSIC_SPACE, [
 		preload("res://item/items/item_planet_mercury.tscn"),
 		preload("res://item/items/item_planet_venus.tscn"),
@@ -61,6 +60,7 @@ Everything around you finally makes sense."),
 		preload("res://item/items/item_planet_neptune.tscn"),
 	], "[b]Soon after...[/b]
 
+You found the answers that you were looking for.
 You have transcended your mortal existence and your microwave has guided you through the process.
 Now, it is the solar system that will be microwaved."),
 	Level.new(30, 1, MUSIC_SPACE, [
@@ -68,12 +68,11 @@ Now, it is the solar system that will be microwaved."),
 		
 	], "[b]The chef of the Universe[/b]
 
-This is the final countdown.
-You have become bored of your solemn existence.
+This is the final countdown. You have become bored of your solemn existence.
 Eveything around you was exposed to electromagnetic radiation.
 Nothing remains.
-As you contemplate your actions, you realize there is onl one thing left to do.
-So you take the universe and put it on your plate.")
+As you contemplate your actions, you realize there is only one thing left to do.
+So you take the universe itself and put it on your plate.")
 ]
 
 var current_level_id = 0
