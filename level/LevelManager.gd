@@ -17,7 +17,7 @@ var levels := [
 		preload("res://item/items/item_pizza.tscn"),
 	], "[b]First Date at my place![/b]
 
-A romance is blooming... your crush is coming over to your place for a romatic dinner.
+A romance is blooming... your crush is coming over to your place for a romantic dinner.
 Prepare two pizzas and a bottle of wine for the date.
 
 Damn it, you don't have a wine opener!"),

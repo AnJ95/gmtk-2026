@@ -61,13 +61,22 @@ func set_open_state(new_open_state: bool):
 		$AnimationPlayerDoor.play("open" if new_open_state else "close")
 
 func _on_mouse_hover_area_2d_mouse_entered() -> void:
-	set_open_state(true)
+	#set_open_state(true)
+	pass
 
 func _on_mouse_hover_area_2d_mouse_exited() -> void:
-	set_open_state(false)
+	#set_open_state(false)
+	pass
 
 func show_microwave_text(text: String) -> void:
 	screen.show_text(text)
 	
 func hide_microwave_text():
 	screen.hide_text()
+
+
+func _on_drag_manager_drag_start() -> void:
+	set_open_state(true)
+
+func _on_drag_manager_drag_end() -> void:
+	set_open_state(false)
