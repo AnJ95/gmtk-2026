@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://gol3qkghcwvb" path="res://main/main.gd" id="1_bg6xb"]
 [ext_resource type="PackedScene" uid="uid://b508p6bfv5gds" path="res://microwave/microwave.tscn" id="1_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://coc74rqeklnof" path="res://shelf/shelf.tscn" id="2_xwkvk"]
+[ext_resource type="Texture2D" uid="uid://dt7xxv0njx40y" path="res://main/assets/plug.png" id="3_jjrvb"]
 [ext_resource type="PackedScene" uid="uid://u6krxpnho2mc" path="res://timer/timer.tscn" id="3_xwkvk"]
 [ext_resource type="Shader" uid="uid://dsvlbrk5o15sf" path="res://post_processing.gdshader" id="5_tv7ag"]
 [ext_resource type="Script" uid="uid://cxm7dyx46v7b8" path="res://main/color_shader.gd" id="6_o80qs"]
@@ -155,6 +156,10 @@ script = ExtResource("1_bg6xb")
 [node name="Background" type="Sprite2D" parent="." unique_id=929398161]
 position = Vector2(960, 540)
 texture = ExtResource("1_0h8po")
+
+[node name="Plug" type="Sprite2D" parent="." unique_id=941324925]
+position = Vector2(1583, 153)
+texture = ExtResource("3_jjrvb")
 
 [node name="Microwave" parent="." unique_id=379186637 instance=ExtResource("1_pjrb6")]
 position = Vector2(750, 542)
