@@ -26,9 +26,84 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="microwave" type="Sprite2D" parent="." unique_id=1616383293]
-position = Vector2(995, 546)
+[node name="Moveable" type="Node2D" parent="." unique_id=293086218]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Moveable" unique_id=766387400]
+custom_minimum_size = Vector2(1000, 1080)
+offset_left = 473.0
+offset_right = 1773.0
+offset_bottom = 3248.0
+theme = ExtResource("1_j0t7f")
+
+[node name="Control" type="Control" parent="Moveable/VBoxContainer" unique_id=94883344]
+custom_minimum_size = Vector2(1300, 1080)
+layout_mode = 2
+
+[node name="microwave" type="Sprite2D" parent="Moveable/VBoxContainer/Control" unique_id=1616383293]
+position = Vector2(658, 539)
 texture = ExtResource("3_svuvw")
+
+[node name="PanelContainer" type="PanelContainer" parent="Moveable/VBoxContainer" unique_id=1378150274]
+custom_minimum_size = Vector2(0, 1080)
+custom_maximum_size = Vector2(-1, 1080)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Moveable/VBoxContainer/PanelContainer" unique_id=1582257003]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="Label" type="Label" parent="Moveable/VBoxContainer/PanelContainer/VBoxContainer" unique_id=2086842428]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Moveable/VBoxContainer/PanelContainer/VBoxContainer" unique_id=388183548]
+layout_mode = 2
+text = "Drag- & Drop the items into the microwave to heat them up.
+Make sure the items are only heated for the required time!"
+
+[node name="PanelContainer2" type="PanelContainer" parent="Moveable/VBoxContainer" unique_id=863486373]
+custom_minimum_size = Vector2(0, 1080)
+custom_maximum_size = Vector2(-1, 1080)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Moveable/VBoxContainer/PanelContainer2" unique_id=1766243541]
+layout_mode = 2
+theme_override_constants/separation = 34
+
+[node name="Label" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1800702896]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=871152220]
+layout_mode = 2
+text = "Created during the Game Makers Toolkit Game Jam"
+
+[node name="Label2" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=1983671033]
+layout_mode = 2
+text = "Made with the Godot Game Engine <3"
+
+[node name="Label3" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=267052674]
+layout_mode = 2
+text = "Used tools:
+* Adobe Photoshop
+* Renoise"
+
+[node name="Label4" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=572890939]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+text = "All graphics where created during the jam using photography or were taken from the internet (CC0 or public domain) "
+autowrap_mode = 3
+
+[node name="Label6" type="Label" parent="Moveable/VBoxContainer/PanelContainer2/VBoxContainer" unique_id=714106039]
+layout_mode = 2
+text = "Special thanks to:
+Godot
+Mark Brown
+Mozart"
 
 [node name="post_processing" type="CanvasLayer" parent="." unique_id=286449441]
 follow_viewport_enabled = true

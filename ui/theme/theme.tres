@@ -67,6 +67,18 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cni3f"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cni3f"]
+content_margin_left = 40.0
+content_margin_top = 70.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [resource]
 Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
@@ -104,3 +116,4 @@ Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_cni3f")
 Label/styles/focus = SubResource("StyleBoxFlat_41ywq")
 Label/styles/normal = SubResource("StyleBoxEmpty_cni3f")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cni3f")
